@@ -5,15 +5,14 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="stars">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-      </div>
+      <div className="stars">&#8902;&#8902;&#8902;</div>
       <div className="slogan">
         <h4>For single For family. For couple. Pets welcome.</h4>
-        <h4>In two words, for everyone</h4>
+        <h4>
+          <span>In two words,</span> for everyone
+        </h4>
       </div>
+      <div className="border"></div>
       <div className="address">
         <h4>Italia</h4>
         <h4>Toscolano Maderno</h4>

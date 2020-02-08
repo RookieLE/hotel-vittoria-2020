@@ -6,6 +6,7 @@ header {
   position: relative;
   height: 70vh;
   z-index: 0;
+
   h2 {
     font-weight: 300;
     font-size: 1.2rem;
@@ -34,5 +35,89 @@ header {
   img {
     width: 180px;
     border: 6px solid white;
+  }
+}
+
+section {
+  background-color: white;
+  margin-top: 300px;
+  padding: 3rem 1rem;
+  position: relative;
+  height: 750px;
+
+  .title {
+    color: $deep-blue;
+
+    p:first-of-type {
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      padding: 1.5rem 0;
+      font-weight: 600;
+      line-height: 2.5rem;
+    }
+  }
+
+  .text {
+    padding: 2rem 0;
+
+    p {
+      line-height: 2rem;
+      padding-right: 1rem;
+    }
+  }
+
+  .book-action {
+    padding: 1rem 0;
+    a {
+      cursor: pointer;
+      color: $deep-blue;
+      width: 208px;
+      height: 56px;
+      border: 2px solid $deep-blue;
+      padding: 0.7rem 1rem;
+    }
+  }
+
+  .image-tv {
+    padding-top: 6rem;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 2;
+
+    img {
+      width: 300px;
+      border-radius: 10px;
+    }
+  }
+
+  .bg-image {
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    bottom: -110px;
+    background-color: white;
+    left: 50%;
+    margin-left: -125px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 #00000030;
+    z-index: 1;
+  }
+
+  .bg-image-small {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    bottom: -120px;
+    background-color: white;
+    left: 50%;
+    margin-left: -100px;
+    border-radius: 10px;
+    box-shadow: 0 0 25px 0 #00000030;
+    z-index: 0;
   }
 }

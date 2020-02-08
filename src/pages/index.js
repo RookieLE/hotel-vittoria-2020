@@ -40,8 +40,10 @@ const IndexPage = () => (
         <div className="image-tv">
           <img src={Pool} alt="hotel swimming pool and garden" />
         </div>
+        <div className="bg-image"></div>
+        <div className="bg-image-small"></div>
       </section>
-      <section>
+      <section style={{ marginBottom: "600px" }}>
         <div className="title">
           <p>Our services</p>
           <h3>Garden, Swimming Pool, Parking</h3>
@@ -61,6 +63,8 @@ const IndexPage = () => (
         <div className="image-tv">
           <img src={Garden} alt="beautiful garden in the hotel" />
         </div>
+        <div className="bg-image" style={{ bottom: "-355px" }}></div>
+        <div className="bg-image-small" style={{ bottom: "-365px" }}></div>
       </section>
     </Layout>
   </>

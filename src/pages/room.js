@@ -8,6 +8,8 @@ import LakeRoomPicture from "../images/hotel/bed-room-lake.jpg"
 import GardenRoomPicture from "../images/hotel/garden-room-vertical.jpg"
 import InsideRoomPicture from "../images/hotel/intern-room-vertical.jpg"
 
+import scrollTo from "gatsby-plugin-smoothscroll"
+
 const RoomPage = () => {
   const [toggleDetails, setToggleDetails] = useState(false)
   const [toggleDetails2, setToggleDetails2] = useState(false)
@@ -24,13 +26,19 @@ const RoomPage = () => {
           <h2>An elegant touch</h2>
           <p>Three different types of Rooms with a new minimal style.</p>
           <div className="actions">
-            <h3>Lake</h3>
-            <h3>Inside</h3>
-            <h3>Garden</h3>
+            <button onClick={() => scrollTo("#lake")}>
+              <h3>Lake</h3>
+            </button>
+            <button onClick={() => scrollTo("#inside")}>
+              <h3>Inside</h3>
+            </button>
+            <button onClick={() => scrollTo("#garden")}>
+              <h3>Garden</h3>
+            </button>
           </div>
         </section>
 
-        <section className="room-section">
+        <section className="room-section" id="lake">
           <img src={LakeRoomPicture} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Lake view</h3>
@@ -57,7 +65,7 @@ const RoomPage = () => {
             </div>
           ) : null}
         </section>
-        <section className="room-section">
+        <section className="room-section" id="garden">
           <img src={GardenRoomPicture} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Garden view</h3>
@@ -84,7 +92,7 @@ const RoomPage = () => {
             </div>
           ) : null}
         </section>
-        <section className="room-section">
+        <section className="room-section" id="inside">
           <img src={InsideRoomPicture} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Inside view</h3>

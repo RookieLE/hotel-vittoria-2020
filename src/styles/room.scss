@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .room-page-header {
   height: 100vh;
@@ -12,7 +12,7 @@
     border: none;
     position: absolute;
     z-index: 0;
-    opacity: .5;
+    opacity: 0.5;
   }
 
   h2 {
@@ -54,7 +54,8 @@
     h3 {
       text-align: start;
       color: white;
-      font-weight: 400;
+      font-weight: 300;
+      letter-spacing: 1px;
       width: 80px;
       font-size: 1.5rem;
       text-transform: uppercase;
@@ -72,14 +73,13 @@
   place-content: center;
   grid-gap: 40px;
 
-
   img {
     width: 100%;
     height: 100%;
     border: none;
     position: absolute;
     z-index: 0;
-    opacity: .3;
+    opacity: 0.3;
     object-fit: cover;
   }
 
@@ -130,7 +130,7 @@
       padding-top: 4rem;
 
       a {
-        padding: .8rem 1rem;
+        padding: 0.8rem 1rem;
         border: 1px solid white;
         color: white;
         text-transform: uppercase;
@@ -149,7 +149,5 @@
       width: 300px;
       margin-left: -150px;
     }
-
   }
-
 }

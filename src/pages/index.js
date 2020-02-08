@@ -37,13 +37,18 @@ const IndexPage = () => (
             details.
           </p>
         </div>
-        <div className="image-tv">
-          <img src={Pool} alt="hotel swimming pool and garden" />
-        </div>
-        <div className="bg-image"></div>
-        <div className="bg-image-small"></div>
       </section>
-      <section style={{ marginBottom: "600px" }}>
+
+      <img
+        className="image-section-welcome"
+        src={Pool}
+        alt="hotel swimming pool and garden"
+      />
+
+      <div className="bg-image"></div>
+      <div className="bg-image-small"></div>
+
+      <section>
         <div className="title">
           <p>Our services</p>
           <h3>Garden, Swimming Pool, Parking</h3>
@@ -60,12 +65,14 @@ const IndexPage = () => (
         <div className="book-action">
           <a href="/booking">Book a room</a>
         </div>
-        <div className="image-tv">
-          <img src={Garden} alt="beautiful garden in the hotel" />
-        </div>
-        <div className="bg-image" style={{ bottom: "-355px" }}></div>
-        <div className="bg-image-small" style={{ bottom: "-365px" }}></div>
       </section>
+      <img
+        className="image-section-garden"
+        src={Garden}
+        alt="beautiful garden in the hotel"
+      />
+      <div className="bg-image"></div>
+      <div className="bg-image-small"></div>
     </Layout>
   </>
 )

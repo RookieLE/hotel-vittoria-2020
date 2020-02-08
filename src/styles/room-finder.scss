@@ -11,14 +11,14 @@ form {
     "adults children"
     "btn btn";
   position: absolute;
-  top: 380px;
+  top: 550px;
   left: 50%;
   background-color: $deep-blue;
-  width: 280px;
+  width: 330px;
   height: 450px;
   border-radius: 25px;
   color: white;
-  margin-left: -140px;
+  margin-left: -165px;
   z-index: 2;
   box-shadow: 0px 0px 225px rgba(44, 70, 100, 0.6);
 
@@ -158,11 +158,18 @@ form {
   position: absolute;
   width: 240px;
   height: 100px;
-  bottom: -30px;
+  top: 910px;
   border-radius: 25px;
   margin-left: -120px;
   left: 50%;
-  background-color: $darker-blue;
+  background-color: #233750;
   z-index: 0;
   box-shadow: 3px 8px 7px 0px rgba(44, 70, 100, 0.6);
+}
+
+@media only screen and (max-width: 350px) {
+  form {
+    width: 280px;
+    margin-left: -140px;
+  }
 }

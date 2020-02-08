@@ -1,0 +1,38 @@
+@import "./variables.scss";
+
+header {
+  background-color: $medium-blue;
+  color: white;
+  position: relative;
+  height: 70vh;
+  z-index: 0;
+  h2 {
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 2.5rem;
+    padding: 1rem 4rem 1rem 1rem;
+  }
+
+  .img-container-1 {
+    transform: rotate(23deg);
+    position: absolute;
+    top: 200px;
+  }
+
+  .img-container-2 {
+    transform: rotate(-23deg);
+    position: absolute;
+    right: 0;
+    top: 200px;
+
+    img {
+      width: 200px;
+    }
+  }
+
+  img {
+    width: 180px;
+    border: 6px solid white;
+  }
+}

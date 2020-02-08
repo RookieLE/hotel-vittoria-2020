@@ -1,7 +1,7 @@
 @import "./variables.scss";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
 
-form {
+.form-room-finder {
   font-family: "Source Sans Pro", sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -168,7 +168,7 @@ form {
 }
 
 @media only screen and (max-width: 350px) {
-  form {
+  .form-room-finder {
     width: 280px;
     margin-left: -140px;
   }

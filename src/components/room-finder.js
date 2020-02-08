@@ -6,7 +6,7 @@ import DateRangeInput from "./date-range-input"
 const RoomFinder = () => {
   return (
     <>
-      <form action="">
+      <form className="form-room-finder" action="">
         <div className="col date">
           <h5>Date</h5>
           <DateRangeInput />

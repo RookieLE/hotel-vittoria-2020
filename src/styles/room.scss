@@ -1,0 +1,155 @@
+@import './variables.scss';
+
+.room-page-header {
+  height: 100vh;
+  position: initial;
+  z-index: -3;
+  background-color: $darker-blue;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    z-index: 0;
+    opacity: .5;
+  }
+
+  h2 {
+    color: white;
+    z-index: 2;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    width: 300px;
+    margin-left: -150px;
+    text-align: center;
+  }
+
+  p {
+    color: white;
+    z-index: 2;
+    position: relative;
+    top: 45%;
+    text-align: center;
+    left: 50%;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    line-height: 2.2rem;
+    width: 300px;
+    margin-left: -150px;
+  }
+
+  .actions {
+    z-index: 2;
+    position: absolute;
+    bottom: 30px;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 100%;
+
+    h3 {
+      text-align: start;
+      color: white;
+      font-weight: 400;
+      width: 80px;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.room-section {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  background-color: $darker-blue;
+  display: grid;
+  place-content: center;
+  grid-gap: 40px;
+
+
+  img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    z-index: 0;
+    opacity: .3;
+    object-fit: cover;
+  }
+
+  h3 {
+    color: white;
+    font-size: 2rem;
+    z-index: 3;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    width: 300px;
+    margin-left: -150px;
+    text-align: center;
+  }
+
+  .details-btn {
+    z-index: 3;
+    text-align: center;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    letter-spacing: 1.3px;
+    font-weight: 200;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .details {
+    z-index: 4;
+    display: grid;
+    grid-gap: 60px;
+
+    button {
+      padding: 1rem;
+      text-decoration: underline;
+    }
+
+    .book-btn-container {
+      text-align: center;
+      padding-top: 4rem;
+
+      a {
+        padding: .8rem 1rem;
+        border: 1px solid white;
+        color: white;
+        text-transform: uppercase;
+      }
+    }
+
+    p {
+      color: white;
+      position: relative;
+      top: 45%;
+      text-align: center;
+      left: 50%;
+      font-weight: 400;
+      letter-spacing: 1.2px;
+      line-height: 2.2rem;
+      width: 300px;
+      margin-left: -150px;
+    }
+
+  }
+
+}

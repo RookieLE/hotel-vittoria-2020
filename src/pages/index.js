@@ -11,7 +11,7 @@ import Garden from "../images/hotel/garden.png"
 const IndexPage = () => (
   <>
     <Layout>
-      <header>
+      <header className="header-index">
         <h2>A cozy and welcoming place in the heart of Toscolano Maderno.</h2>
         <div className="img-container-1">
           <img src={BedRoom} alt="cozy bed room with lamp" />
@@ -21,7 +21,7 @@ const IndexPage = () => (
         </div>
       </header>
       <RoomFinder />
-      <section>
+      <section className="section-index">
         <div className="title">
           <p>Welcome to the</p>
           <h3>Best Hotel in Toscolano Maderno</h3>
@@ -48,7 +48,7 @@ const IndexPage = () => (
       <div className="bg-image"></div>
       <div className="bg-image-small"></div>
 
-      <section>
+      <section className="section-index">
         <div className="title">
           <p>Our services</p>
           <h3>Garden, Swimming Pool, Parking</h3>

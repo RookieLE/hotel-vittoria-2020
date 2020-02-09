@@ -51,6 +51,15 @@
     justify-content: space-between;
     width: 100%;
 
+    button {
+      background-color: transparent;
+      border: none;
+      text-align: start;
+      transform: rotate(-90deg);
+      cursor: pointer;
+      outline: none;
+    }
+
     h3 {
       text-align: start;
       color: white;
@@ -59,7 +68,6 @@
       width: 80px;
       font-size: 1.5rem;
       text-transform: uppercase;
-      transform: rotate(-90deg);
     }
   }
 }

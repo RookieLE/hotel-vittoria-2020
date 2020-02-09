@@ -10,15 +10,15 @@
     "date date"
     "adults children"
     "btn btn";
-  position: absolute;
-  top: 550px;
-  left: 50%;
+  position: relative;
+  bottom: 130px;
   background-color: $deep-blue;
-  width: 330px;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1000px;
   height: 450px;
   border-radius: 25px;
   color: white;
-  margin-left: -165px;
   z-index: 2;
   box-shadow: 0px 0px 225px rgba(44, 70, 100, 0.6);
 
@@ -34,6 +34,7 @@
   .date {
     grid-area: date;
     padding-left: 2rem;
+    height: 100%;
   }
 
   .adults {
@@ -82,13 +83,13 @@
   button {
     grid-area: btn;
     background-color: $mint;
-    width: 70%;
-    height: 50px;
+    width: 80%;
+    height: 40px;
     border-radius: 50px;
     text-transform: uppercase;
     color: $deep-blue;
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     letter-spacing: 0.8px;
     place-self: center;
   }
@@ -154,7 +155,7 @@
   }
 }
 
-.bg-form {
+/* .bg-form {
   position: absolute;
   width: 240px;
   height: 100px;
@@ -165,11 +166,50 @@
   background-color: #233750;
   z-index: 0;
   box-shadow: 3px 8px 7px 0px rgba(44, 70, 100, 0.6);
-}
+} */
 
 @media only screen and (max-width: 350px) {
   .form-room-finder {
-    width: 280px;
-    margin-left: -140px;
+    bottom: 60px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  .form-room-finder {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "date adults children btn";
+    place-items: center;
+    height: 150px;
+    width: 90%;
+
+    .date {
+      grid-area: date;
+      padding-left: 2rem;
+      border-right: 2px solid #23375085;
+    }
+
+    .adults {
+      grid-area: adults;
+      place-self: center;
+      border-bottom: none;
+      border-top: none;
+      border-right: 2px solid #23375085;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .children {
+      grid-area: children;
+      place-self: center;
+      border-bottom: none;
+      border-top: none;
+      border-right: 2px solid #23375085;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
   }
 }

@@ -1,6 +1,418 @@
 @import "./variables.scss";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
 
+.form-container {
+  position: fixed;
+  bottom: 0;
+  z-index: 99999;
+  width: 100%;
+}
+
+.form-room-finder-desktop {
+  display: none;
+}
+
+.form-room-finder {
+  font-family: "Source Sans Pro", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr;
+  grid-template-areas:
+    "date date"
+    "adults children"
+    "btn btn";
+  background-color: #2c4664;
+  width: 100%;
+  max-width: 1000px;
+  height: 50%;
+  color: white;
+  z-index: 2;
+  box-shadow: 0px 0px 225px rgba(44, 70, 100, 0.6);
+
+  h5 {
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: white;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+
+  .col {
+    display: grid;
+    place-content: center;
+  }
+
+  .date {
+    grid-area: date;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .adults {
+    grid-area: adults;
+    place-self: center;
+    border-bottom: 2px solid #23375085;
+    border-top: 2px solid #23375085;
+    border-right: 2px solid #23375085;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .children {
+    grid-area: children;
+    place-self: center;
+    border-bottom: 2px solid #23375085;
+    border-top: 2px solid #23375085;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  .col p {
+    font-size: 3rem;
+    font-weight: lighter;
+    position: relative;
+    width: 66px;
+    margin: 0 auto;
+
+    &:after {
+      content: "-";
+      position: absolute;
+      font-size: 1.5rem;
+      top: 15px;
+      left: 0;
+    }
+
+    &:before {
+      content: "+";
+      position: absolute;
+      font-size: 1.5rem;
+      top: 15px;
+      right: 0;
+    }
+  }
+
+  button {
+    grid-area: btn;
+    background-color: $mint;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    color: $deep-blue;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+    place-self: center;
+  }
+
+  .date-range {
+    display: grid;
+    place-items: center;
+    padding-bottom: 1rem;
+
+    input {
+      text-align: center;
+      padding: 0.5rem 0;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 200;
+      margin: 0 10px;
+    }
+  }
+
+  input {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+
+    &::placeholder {
+      color: $whitesmoke;
+    }
+
+    &::focus {
+      color: $whitesmoke;
+    }
+  }
+
+  .nice-dates-popover {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+    /* margin: 8px 0; */
+    /* max-width: 600px; */
+    /* top: 50%; */
+    left: 50%;
+    height: 340px;
+    width: 300px;
+    margin-left: -150px;
+    top: -200px;
+    position: absolute;
+    -webkit-transform-origin: top;
+    transform-origin: top;
+    -webkit-transform: perspective(1000px);
+    transform: perspective(1000px);
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, -webkit-transform;
+    transition-property: transform, opacity;
+    transition-property: transform, opacity, -webkit-transform;
+    -webkit-transition-duration: 400ms;
+    transition-duration: 400ms;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0.2, 0, 1.1);
+    transition-timing-function: cubic-bezier(0.4, 0.2, 0, 1.1);
+    /* width: 100%; */
+    will-change: transform, opacity;
+    z-index: 9;
+
+    .nice-dates-day:before {
+      background-color: #365478;
+      z-index: 1;
+    }
+  }
+}
+
+.close-form-finder {
+  width: 100%;
+  height: 20px;
+  padding: 0.2rem;
+  background-color: $deep-blue;
+  place-items: end;
+  display: grid;
+  z-index: 999999;
+
+  button {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    letter-spacing: 1.4px;
+  }
+}
+
+// ROOM FINDER BUTTON
+
+.room-finder-btn {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  height: 70px;
+  grid-template-rows: 1fr 2fr;
+  background-color: $darker-blue;
+  place-content: center;
+  text-align: center;
+  padding-top: 0.5rem;
+  z-index: 999999;
+
+  img {
+    margin: 0 auto;
+    width: 25px;
+    height: 25px;
+    transform: rotate(180deg);
+  }
+
+  button {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .form-room-finder {
+    bottom: 60px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  footer {
+    padding: 1rem 1rem 5rem 1rem;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .form-container,
+  .room-finder-btn {
+    display: none;
+    z-index: -9999;
+  }
+
+  .form-room-finder-desktop {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "date adults children btn";
+    place-items: center;
+    height: 150px;
+    width: 90%;
+    font-family: "Source Sans Pro", sans-serif;
+    position: relative;
+    display: grid;
+    bottom: 130px;
+    background-color: #2c4664;
+    margin: 0 auto;
+    max-width: 1200px;
+    border-radius: 50px;
+    color: white;
+    z-index: 999;
+    box-shadow: 0px 0px 225px rgba(44, 70, 100, 0.6);
+
+    .date {
+      grid-area: date;
+      padding-left: 2rem;
+      border-right: 2px solid #23375085;
+    }
+
+    .adults {
+      grid-area: adults;
+      place-self: center;
+      border-bottom: none;
+      border-top: none;
+      border-right: 2px solid #23375085;
+      border-left: 2px solid #23375085;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    .children {
+      grid-area: children;
+      place-self: center;
+      border-bottom: none;
+      border-top: none;
+      border-right: 2px solid #23375085;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+
+    button {
+      grid-area: btn;
+      background-color: #ceffbd;
+      width: 100%;
+      height: 100%;
+      border-radius: 0 50px 50px 0;
+      text-transform: uppercase;
+      color: #2c4664;
+      font-weight: 400;
+      font-size: 1.3rem;
+      letter-spacing: 0.8px;
+      place-self: center;
+    }
+
+    h5 {
+      font-weight: 300;
+      letter-spacing: 1px;
+      color: white;
+      text-transform: uppercase;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .col {
+      display: grid;
+      place-content: center;
+    }
+
+    .col p {
+      font-size: 3rem;
+      font-weight: lighter;
+      position: relative;
+      width: 66px;
+      margin: 0 auto;
+
+      &:after {
+        content: "-";
+        position: absolute;
+        font-size: 1.5rem;
+        top: 15px;
+        left: 0;
+      }
+
+      &:before {
+        content: "+";
+        position: absolute;
+        font-size: 1.5rem;
+        top: 15px;
+        right: 0;
+      }
+    }
+
+    .date-range {
+      display: inline-flex;
+      place-items: center;
+      padding-bottom: 1rem;
+
+      input {
+        text-align: start;
+        padding: 0.5rem 0;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 200;
+        margin: 0 10px;
+        width: 150px;
+      }
+    }
+
+    input {
+      border: none;
+      background-color: transparent;
+      font-size: 1rem;
+
+      &::placeholder {
+        color: $whitesmoke;
+      }
+
+      &::focus {
+        color: $whitesmoke;
+      }
+    }
+
+    .nice-dates-popover {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+      /* margin: 8px 0; */
+      /* max-width: 600px; */
+      /* top: 50%; */
+      left: 50%;
+      height: 340px;
+      width: 300px;
+      margin-left: -150px;
+      top: -200px;
+      position: absolute;
+      -webkit-transform-origin: top;
+      transform-origin: top;
+      -webkit-transform: perspective(1000px);
+      transform: perspective(1000px);
+      -webkit-transition-property: opacity, -webkit-transform;
+      transition-property: opacity, -webkit-transform;
+      transition-property: transform, opacity;
+      transition-property: transform, opacity, -webkit-transform;
+      -webkit-transition-duration: 400ms;
+      transition-duration: 400ms;
+      -webkit-transition-timing-function: cubic-bezier(0.4, 0.2, 0, 1.1);
+      transition-timing-function: cubic-bezier(0.4, 0.2, 0, 1.1);
+      /* width: 100%; */
+      will-change: transform, opacity;
+      z-index: 9;
+
+      .nice-dates-day:before {
+        background-color: #365478;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+/* 
+
 .form-room-finder {
   font-family: "Source Sans Pro", sans-serif;
   display: grid;
@@ -119,97 +531,6 @@
     }
   }
 
-  .nice-dates-popover {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
-    /* margin: 8px 0; */
-    /* max-width: 600px; */
-    /* top: 50%; */
-    left: 50%;
-    height: 340px;
-    width: 300px;
-    margin-left: -150px;
-    top: -200px;
-    position: absolute;
-    -webkit-transform-origin: top;
-    transform-origin: top;
-    -webkit-transform: perspective(1000px);
-    transform: perspective(1000px);
-    -webkit-transition-property: opacity, -webkit-transform;
-    transition-property: opacity, -webkit-transform;
-    transition-property: transform, opacity;
-    transition-property: transform, opacity, -webkit-transform;
-    -webkit-transition-duration: 400ms;
-    transition-duration: 400ms;
-    -webkit-transition-timing-function: cubic-bezier(0.4, 0.2, 0, 1.1);
-    transition-timing-function: cubic-bezier(0.4, 0.2, 0, 1.1);
-    /* width: 100%; */
-    will-change: transform, opacity;
-    z-index: 9;
-
-    .nice-dates-day:before {
-      background-color: #365478;
-      z-index: 1;
-    }
-  }
-}
-
-/* .bg-form {
-  position: absolute;
-  width: 240px;
-  height: 100px;
-  top: 910px;
-  border-radius: 25px;
-  margin-left: -120px;
-  left: 50%;
-  background-color: #233750;
-  z-index: 0;
-  box-shadow: 3px 8px 7px 0px rgba(44, 70, 100, 0.6);
+  
+  
 } */
-
-@media only screen and (max-width: 350px) {
-  .form-room-finder {
-    bottom: 60px;
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (min-width: 750px) {
-  .form-room-finder {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas: "date adults children btn";
-    place-items: center;
-    height: 150px;
-    width: 90%;
-
-    .date {
-      grid-area: date;
-      padding-left: 2rem;
-      border-right: 2px solid #23375085;
-    }
-
-    .adults {
-      grid-area: adults;
-      place-self: center;
-      border-bottom: none;
-      border-top: none;
-      border-right: 2px solid #23375085;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-    }
-
-    .children {
-      grid-area: children;
-      place-self: center;
-      border-bottom: none;
-      border-top: none;
-      border-right: 2px solid #23375085;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-    }
-  }
-}

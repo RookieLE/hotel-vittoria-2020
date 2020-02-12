@@ -14,10 +14,10 @@ const ContactPage = () => (
           <h3>Contact Us</h3>
         </div>
         <div className="row">
-          <input type="text" placeHolder="Name" />
+          <input type="text" placeholder="Name" />
         </div>
         <div className="row">
-          <input type="email" placeHolder="E-mail" />
+          <input type="email" placeholder="E-mail" />
         </div>
         <div className="row">
           <textarea

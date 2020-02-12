@@ -16,7 +16,8 @@ const IndexPage = () => (
       <header className="header-index">
         <h2>A cozy and welcoming place in the heart of Toscolano Maderno.</h2>
         <img
-          src={LakeRoomPicture}
+          display={{ objectFit: "cover" }}
+          src={BedRoom}
           alt="cozy bed room with lamp"
           className="img-mobile-header"
         />

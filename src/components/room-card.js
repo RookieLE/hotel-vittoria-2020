@@ -1,57 +1,124 @@
-import React from "react"
+import React, { useState } from "react"
+import "../styles/room-card.scss"
+
+import LakeRoomPicture2 from "../images/hotel/bed-room-lake.png"
+
+import TvIcon from "../images/icons/tv.png"
+import FridgeIcon from "../images/icons/fridge.png"
+import CoolingIcon from "../images/icons/cooling.png"
+import ParkingIcon from "../images/icons/parking.png"
+import WifiIcon from "../images/icons/wifi.png"
 
 const RoomCard = () => {
+  const [toggleIncluded, setToggleIncluded] = useState(false)
+  const [toggleInfo, setToggleInfo] = useState(false)
   return (
-    <section>
+    <section className="room-card-container">
       <div className="title">
-        <h3>Lake</h3>
+        <h3>Lake View</h3>
       </div>
       <div className="img-tv">
-        <img src="" alt="" />
+        <img src={LakeRoomPicture2} alt="hotel room with bed king size" />
       </div>
-      <div className="what-included-btn">
+      <div
+        className="what-included-btn"
+        onClick={() => setToggleIncluded(!toggleIncluded)}
+      >
         <h4>What is included ?</h4>
       </div>
-      <div className="what-include">
+      {toggleIncluded ? (
+        <div className="what-include">
+          <ul>
+            <li>
+              <img src={TvIcon} alt="" /> Smart TV
+            </li>
+            <li>
+              <img src={FridgeIcon} alt="" /> Mini Fridge
+            </li>
+            <li>
+              <img src={CoolingIcon} alt="" /> Cooling
+            </li>
+            <li>
+              <img src={ParkingIcon} alt="" /> Parking
+            </li>
+            <li>
+              <img src={WifiIcon} alt="" /> High Speed Wi-Fi
+            </li>
+          </ul>
+        </div>
+      ) : null}
+      <div className="what-include big-width">
+        <p>The room price also includes: </p>
         <ul>
-          <li>ICON</li>
-          <li>ICON</li>
-          <li>ICON</li>
-          <li>ICON</li>
-          <li>ICON</li>
+          <li>
+            <img src={TvIcon} alt="" /> Smart TV
+          </li>
+          <li>
+            <img src={FridgeIcon} alt="" /> Mini Fridge
+          </li>
+          <li>
+            <img src={CoolingIcon} alt="" /> Cooling
+          </li>
+          <li>
+            <img src={ParkingIcon} alt="" /> Parking
+          </li>
+          <li>
+            <img src={WifiIcon} alt="" /> High Speed Wi-Fi
+          </li>
         </ul>
       </div>
-      <div className="info-btn">
+      <div className="info-btn" onClick={() => setToggleInfo(!toggleInfo)}>
         <h4>Info</h4>
       </div>
-      <div className="info">
+      {toggleInfo ? (
+        <div className="info">
+          <p>
+            The <strong>check-in</strong> is is available from 02.00 pm and the
+            <strong>check-out</strong> limit is 10.00 am.
+          </p>
+          <p>
+            <strong>Breakfast</strong> is served between 08:00 and 10:00. You
+            will find a rich smorgasbord, salty and sweet, whit delicious
+            homemade cakes.
+          </p>
+        </div>
+      ) : null}
+      <div className="info big-width">
         <p>
-          The check-in is is available from 02.00 pm and the check-out limit is
-          10.00 am.
+          The <strong>check-in</strong> is is available from 02.00 pm and the
+          <strong>check-out</strong> limit is 10.00 am.
         </p>
         <p>
-          Breakfast is served between 08:00 and 10:00. You will find a rich
-          smorgasbord, salty and sweet, whit delicious homemade cakes.
+          <strong>Breakfast</strong> is served between 08:00 and 10:00. You will
+          find a rich smorgasbord, salty and sweet, whit delicious homemade
+          cakes.
         </p>
       </div>
       <div className="city-tax">
-        <p>At the final price it will added € 1,50 daily of city tax</p>
-      </div>
-      <div className="breakfast">
-        <div className="is-included">
-          <p>Breakfast is included.</p>
+        <p>At the final price it will added € 1,50 daily of city tax.</p>
+        <div className="breakfast">
+          <div className="is-included">
+            <p>
+              <mark>Breakfast is included.</mark>
+            </p>
+          </div>
+          <div className="is-not-inclueded">
+            <p>
+              <mark>
+                Breakfast is not included, you can have it for € 10 per day.
+              </mark>
+            </p>
+          </div>
         </div>
-        <div className="is-not-inclueded">
-          <p>Breakfast is not included, you can have it for € 10 per day.</p>
-        </div>
       </div>
+
       <div className="price">
         <p>
-          <span>€ 90</span> /night
+          <span className="price-num">€ 90</span> / night
         </p>
         <p>
-          <span class="total">€ 450,00</span> for <span class="n-night">5</span>{" "}
-          night
+          <span className="total">€ 450,00</span> for{" "}
+          <span className="n-night">5</span> night
         </p>
       </div>
       <a href="/contact" className="book-btn">

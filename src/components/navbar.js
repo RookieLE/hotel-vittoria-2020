@@ -26,7 +26,9 @@ const Navbar = () => {
             <li className="close-btn" onClick={() => setToggleNav(!toggleNav)}>
               <img src={CloseIcon} alt="close icon" />
             </li>
-            <li className="stars">&#8902;&#8902;&#8902;</li>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
             <Link to="/room">
               <li>Rooms</li>
             </Link>

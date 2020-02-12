@@ -1,0 +1,220 @@
+@import "./variables.scss";
+
+.room-card-container {
+  padding: 4rem 1rem;
+  max-width: 550px;
+  margin: 0 auto 8rem auto;
+  color: $deep-blue;
+
+  .title {
+    padding-bottom: 2rem;
+
+    h3 {
+      color: $deep-blue;
+      font-size: 1.2rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      text-align: start;
+    }
+  }
+
+  .big-width {
+    display: none;
+  }
+
+  ul {
+    display: grid;
+    grid-gap: 1rem;
+
+    li {
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+
+      img {
+        margin: 0 20px;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        background-color: #365478c2;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    border-radius: 20px;
+    max-width: 500px;
+  }
+
+  .what-included-btn,
+  .info-btn {
+    cursor: pointer;
+    padding: 2rem 1rem;
+    width: 80%;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      margin-top: 10px;
+      width: 80%;
+      height: 2px;
+      background-color: $medium-blue;
+    }
+
+    h4 {
+      color: $deep-blue;
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      text-align: start;
+    }
+  }
+
+  .info,
+  .breakfast {
+    p {
+      padding: 1rem;
+      letter-spacing: 1.1px;
+      line-height: 1.6rem;
+    }
+
+    mark {
+      background-color: $mint;
+    }
+  }
+
+  .city-tax {
+    padding: 1rem;
+
+    p {
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      line-height: 1.6rem;
+    }
+  }
+
+  .price {
+    padding: 3rem 2rem;
+
+    p {
+      padding: 1rem 0;
+      color: $medium-blue;
+    }
+
+    .price-num {
+      font-size: 3rem;
+      font-kerning: 900;
+      color: $darker-blue;
+    }
+
+    .total {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+  }
+
+  .book-btn {
+    place-self: center;
+    background-color: $darker-blue;
+    color: white;
+    width: 100%;
+    margin-left: 2rem;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1160px) {
+  .room-card-container {
+    max-width: 1200px;
+    display: grid;
+    grid-template-areas:
+      "img title title"
+      "img whatInclude whatInclude"
+      "info info info"
+      "price citytax btn";
+    grid-gap: 1rem;
+    place-content: center;
+    padding: 3rem;
+    background-color: $light-blue;
+
+    .big-width {
+      display: inline;
+    }
+
+    .what-included-btn,
+    .info-btn {
+      display: none;
+    }
+
+    img {
+      border-radius: 0;
+    }
+
+    .title {
+      grid-area: title;
+      padding: 0 0 0 2rem;
+
+      h3 {
+        font-size: 1.4rem;
+      }
+    }
+
+    .img-tv {
+      grid-area: img;
+    }
+
+    .what-include {
+      grid-area: whatInclude;
+
+      p {
+        padding: 2rem;
+      }
+
+      ul {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+
+        li {
+          padding-bottom: 0.5rem;
+        }
+      }
+    }
+
+    .info {
+      grid-area: info;
+      padding: 3rem 0;
+
+      p {
+        line-height: 2.5rem;
+      }
+    }
+
+    .price {
+      grid-area: price;
+    }
+
+    .city-tax {
+      grid-area: citytax;
+      grid-area: citytax;
+      display: grid;
+      place-content: center;
+      grid-gap: 1rem;
+      max-width: 300px;
+
+      p {
+        padding: 0;
+      }
+    }
+
+    .book-btn {
+      grid-area: btn;
+    }
+  }
+}

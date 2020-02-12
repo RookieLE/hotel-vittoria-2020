@@ -5,11 +5,17 @@ import HambIconWhite from "../images/icons/hamb.svg"
 import CloseIcon from "../images/icons/close-btn.png"
 import CallIcon from "../images/icons/call.png"
 
-const Navbar = () => {
+const Navbar = contactPagePath => {
   const [toggleNav, setToggleNav] = useState(false)
   return (
     <>
-      <div className="nav-mobile">
+      <div
+        className={
+          contactPagePath.contactPagePath === "/contact"
+            ? "nav-mobile-contact"
+            : "nav-mobile"
+        }
+      >
         <nav>
           <Link className="logo" to="/">
             <h1>Hotel Vittoria</h1>
@@ -44,7 +50,13 @@ const Navbar = () => {
         ) : null}
       </div>
 
-      <nav className="nav-desktop">
+      <nav
+        className={
+          contactPagePath.contactPagePath === "/contact"
+            ? "nav-desktop-contact"
+            : "nav-desktop"
+        }
+      >
         <ul className="nav-links">
           <Link className="logo" to="/">
             <h1>Hotel Vittoria</h1>

@@ -8,7 +8,7 @@ import "../styles/layout.scss"
 const Layout = props => {
   return (
     <>
-      <Navbar />
+      <Navbar contactPagePath={props.contactPagePath} />
       {props.children}
       <Footer />
     </>

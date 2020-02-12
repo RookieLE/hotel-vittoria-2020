@@ -37,7 +37,7 @@ const RoomFinder = () => {
           className="room-finder-btn"
           onClick={() => setToggleRoomFinder(!toggleRoomFinder)}
         >
-          <img src={ArrowIcon} alt="" />
+          {/*  <img src={ArrowIcon} alt="" /> */}
           <button>Find a Room</button>
         </section>
       )}

@@ -200,11 +200,9 @@
   width: 100%;
   display: grid;
   height: 70px;
-  grid-template-rows: 1fr 2fr;
-  background-color: $darker-blue;
-  place-content: center;
+  grid-template-rows: 1fr;
+  background-color: #233750;
   text-align: center;
-  padding-top: 0.5rem;
   z-index: 999999;
 
   img {
@@ -238,6 +236,7 @@
 }
 
 @media only screen and (min-width: 900px) {
+
   .form-container,
   .room-finder-btn {
     display: none;

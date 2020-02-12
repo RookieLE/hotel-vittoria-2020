@@ -1,0 +1,102 @@
+@import './variables.scss';
+
+
+.socials {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
+
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin: 0 .5rem;
+  }
+}
+
+.contact-form {
+  padding: 8rem 2rem 5rem 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+
+  h3 {
+    color: $deep-blue;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    text-align: start;
+    padding-bottom: 1rem;
+  }
+
+  .row {
+    width: 100%;
+
+    input {
+      font-family: "Montserrat", sans-serif;
+      color: $medium-blue;
+      width: 100%;
+      background-color: $light-blue;
+      border: none;
+      padding: 1rem;
+      margin: 1rem 0;
+      font-size: 1rem;
+      border-radius: 5px;
+      outline: none;
+
+      &::placeholder {
+        color: $medium-blue;
+      }
+    }
+
+    textarea {
+      font-family: "Montserrat", sans-serif;
+      width: 100%;
+      background-color: $light-blue;
+      border: none;
+      border-radius: 5px;
+      padding: 1rem;
+      font-size: 1rem;
+      color: $medium-blue;
+      outline: none;
+
+      &::placeholder {
+        color: $medium-blue;
+      }
+    }
+
+    button {
+      margin: 2rem 0;
+      padding: 1rem;
+      border-radius: 5px;
+      width: 50%;
+      border: none;
+      outline: none;
+      font-size: 1.2rem;
+      color: white;
+      background-color: $medium-blue;
+      transition: transform 150ms ease-in;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.05);
+      }
+    }
+
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .socials {
+    padding: 1rem 2rem;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .contact-form {
+    height: 80vh;
+    padding: 20rem 2rem 5rem 2rem;
+  }
+}

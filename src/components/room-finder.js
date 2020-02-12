@@ -4,9 +4,15 @@ import "../styles/room-finder.scss"
 import DateRangeInput from "./date-range-input"
 
 import ArrowIcon from "../images/icons/arrow.png"
+import { setDate } from "date-fns"
 
 const RoomFinder = () => {
   const [toggleRoomFinder, setToggleRoomFinder] = useState(false)
+  const [adultsInput, setAdultsInput] = useState(0)
+  const [childrenInput, setChildrenInput] = useState(0)
+  const [startDate, setStartDate] = useState()
+  const [endDate, setEndDate] = useState()
+
   return (
     <>
       {toggleRoomFinder ? (
@@ -23,11 +29,19 @@ const RoomFinder = () => {
             </div>
             <div className="col adults">
               <h5>Adults</h5>
-              <p>0</p>
+              <div className="inc-dec-container">
+                <p onClick={() => setAdultsInput(adultsInput - 1)}>-</p>
+                <p>{adultsInput}</p>
+                <p onClick={() => setAdultsInput(adultsInput + 1)}>+</p>
+              </div>
             </div>
             <div className="col children">
               <h5>Children</h5>
-              <p>0</p>
+              <div className="inc-dec-container">
+                <p onClick={() => setChildrenInput(childrenInput - 1)}>-</p>
+                <p>{childrenInput}</p>
+                <p onClick={() => setChildrenInput(childrenInput + 1)}>+</p>
+              </div>
             </div>
             <button type="submit">Find Room</button>
           </form>
@@ -48,11 +62,19 @@ const RoomFinder = () => {
         </div>
         <div className="col adults">
           <h5>Adults</h5>
-          <p>0</p>
+          <div className="inc-dec-container">
+            <p onClick={() => setAdultsInput(adultsInput - 1)}>-</p>
+            <p>{adultsInput}</p>
+            <p onClick={() => setAdultsInput(adultsInput + 1)}>+</p>
+          </div>
         </div>
         <div className="col children">
           <h5>Children</h5>
-          <p>0</p>
+          <div className="inc-dec-container">
+            <p onClick={() => setChildrenInput(childrenInput - 1)}>-</p>
+            <p>{childrenInput}</p>
+            <p onClick={() => setChildrenInput(childrenInput + 1)}>+</p>
+          </div>
         </div>
         <button type="submit">Find Room</button>
       </form>

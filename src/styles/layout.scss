@@ -22,6 +22,10 @@ a {
   color: $deep-blue;
 }
 
+button {
+  -webkit-appearance: none;
+}
+
 // NAVBAR
 
 .nav-mobile {

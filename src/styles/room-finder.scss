@@ -50,6 +50,18 @@
     place-items: center;
   }
 
+  .adults,
+  .children {
+    button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      font-weight: 100;
+      cursor: pointer;
+    }
+  }
+
   .adults {
     grid-area: adults;
     place-self: center;
@@ -79,9 +91,13 @@
 
   .inc-dec-container {
     display: inline-flex;
+
+    p {
+      cursor: pointer;
+    }
   }
 
-  button {
+  .find-room-btn {
     grid-area: btn;
     background-color: $mint;
     width: 100%;
@@ -92,6 +108,8 @@
     font-size: 1rem;
     letter-spacing: 0.8px;
     place-self: center;
+    border: none;
+    outline: none;
   }
 
   .date-range {
@@ -110,11 +128,10 @@
       font-weight: 200;
       margin: 0 10px;
 
-
       &::placeholder {
         font-family: "Source Sans Pro", sans-serif;
         color: white;
-        opacity: .3;
+        opacity: 0.3;
         font-weight: 200;
       }
 
@@ -123,7 +140,6 @@
       }
     }
   }
-
 
   .nice-dates-popover {
     background-color: #fff;
@@ -173,7 +189,7 @@
   button {
     font-family: "Montserrat", sans-serif;
     color: white;
-    font-size: .8rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: 200;
     letter-spacing: 1.4px;
@@ -224,7 +240,6 @@
 }
 
 @media only screen and (min-width: 900px) {
-
   .form-container,
   .room-finder-btn {
     display: none;
@@ -263,6 +278,19 @@
       }
     }
 
+    .adults,
+    .children {
+      button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        font-weight: 100;
+        cursor: pointer;
+        outline: none;
+      }
+    }
+
     .adults {
       grid-area: adults;
       place-self: center;
@@ -286,19 +314,26 @@
       text-align: center;
     }
 
-    button {
+    .find-room-btn {
       grid-area: btn;
-      background-color: #ceffbd;
+      background-color: transparent;
       width: 100%;
       height: 100%;
       border-radius: 0 50px 50px 0;
       text-transform: uppercase;
-      color: #2c4664;
+      color: white;
       font-weight: 400;
       font-size: 1.3rem;
       letter-spacing: 0.8px;
       place-self: center;
       border: none;
+      cursor: pointer;
+      outline: none;
+      transition: background-color 100ms ease-in;
+
+      &:hover {
+        background-color: $darker-blue;
+      }
     }
 
     h5 {
@@ -321,6 +356,8 @@
       position: relative;
       width: 66px;
       margin: 0 auto;
+      cursor: pointer;
+      outline: none;
     }
 
     .date-range {
@@ -339,14 +376,13 @@
         border: none;
         background-color: transparent;
         outline: none;
-        margin: .5rem;
+        margin: 0.5rem;
 
         &::placeholder {
           font-family: "Source Sans Pro", sans-serif;
           color: white;
-          opacity: .5;
+          opacity: 0.5;
           font-size: 1.3rem;
-
         }
 
         &::focus {
@@ -354,7 +390,6 @@
         }
       }
     }
-
 
     .nice-dates-popover {
       background-color: #fff;

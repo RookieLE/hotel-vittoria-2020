@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/layout"
+import Layout from "../layouts"
 import RoomFinder from "../components/room-finder"
 import RoomCard from "../components/room-card"
 
@@ -11,7 +11,7 @@ import GardenSecondary from "../images/hotel/garden-secondary.png"
 import LakeRoomPicture from "../images/hotel/bed-room-lake.jpg"
 import LakeRoomPicture2 from "../images/hotel/bed-room-lake.png"
 
-const BookingPage = () => (
+const BookingPage = ({ location }) => (
   <>
     <Layout>
       <header className="header-index">
@@ -28,7 +28,7 @@ const BookingPage = () => (
           className="img-desktop-header"
         />
       </header>
-      <RoomFinder />
+      <RoomFinder location={location} />
       <RoomCard />
     </Layout>
   </>

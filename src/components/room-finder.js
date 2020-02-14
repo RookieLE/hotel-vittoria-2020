@@ -1,18 +1,18 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { navigate } from "gatsby"
 import "../styles/room-finder.scss"
 
 import DateRangeInput from "./date-range-input"
 
-import ArrowIcon from "../images/icons/arrow.png"
-import { setDate } from "date-fns"
+import { BookingFinderContext } from "../context/BookFinderContext"
 
-const RoomFinder = () => {
-  const [toggleRoomFinder, setToggleRoomFinder] = useState(false)
-  const [adultsInput, setAdultsInput] = useState(0)
-  const [childrenInput, setChildrenInput] = useState(0)
-  const [startDate, setStartDate] = useState()
-  const [endDate, setEndDate] = useState()
+const RoomFinder = ({ location }) => {
+  const [toggleRoomFinder, setToggleRoomFinder] = useState(true)
+  const [booking, setBooking] = useContext(BookingFinderContext)
 
+  const findRoomSubmitted = e => {
+    e.preventDefault()
+  }
   return (
     <>
       {toggleRoomFinder ? (
@@ -30,20 +30,54 @@ const RoomFinder = () => {
             <div className="col adults">
               <h5>Adults</h5>
               <div className="inc-dec-container">
-                <p onClick={() => setAdultsInput(adultsInput - 1)}>-</p>
-                <p>{adultsInput}</p>
-                <p onClick={() => setAdultsInput(adultsInput + 1)}>+</p>
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                    setBooking({ ...booking, adults: booking.adults - 1 })
+                  }}
+                >
+                  -
+                </button>
+                <p>{booking.adults}</p>
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                    setBooking({ ...booking, adults: booking.adults + 1 })
+                  }}
+                >
+                  +
+                </button>
               </div>
             </div>
             <div className="col children">
               <h5>Children</h5>
               <div className="inc-dec-container">
-                <p onClick={() => setChildrenInput(childrenInput - 1)}>-</p>
-                <p>{childrenInput}</p>
-                <p onClick={() => setChildrenInput(childrenInput + 1)}>+</p>
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                    setBooking({ ...booking, children: booking.children - 1 })
+                  }}
+                >
+                  -
+                </button>
+                <p>{booking.children}</p>
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                    setBooking({ ...booking, children: booking.children + 1 })
+                  }}
+                >
+                  +
+                </button>
               </div>
             </div>
-            <button type="submit">Find Room</button>
+            <button
+              className="find-room-btn"
+              onClick={findRoomSubmitted}
+              type="submit"
+            >
+              Find Room
+            </button>
           </form>
         </section>
       ) : (
@@ -63,20 +97,54 @@ const RoomFinder = () => {
         <div className="col adults">
           <h5>Adults</h5>
           <div className="inc-dec-container">
-            <p onClick={() => setAdultsInput(adultsInput - 1)}>-</p>
-            <p>{adultsInput}</p>
-            <p onClick={() => setAdultsInput(adultsInput + 1)}>+</p>
+            <button
+              onClick={e => {
+                e.preventDefault()
+                setBooking({ ...booking, adults: booking.adults - 1 })
+              }}
+            >
+              -
+            </button>
+            <p>{booking.adults}</p>
+            <button
+              onClick={e => {
+                e.preventDefault()
+                setBooking({ ...booking, adults: booking.adults + 1 })
+              }}
+            >
+              +
+            </button>
           </div>
         </div>
         <div className="col children">
           <h5>Children</h5>
           <div className="inc-dec-container">
-            <p onClick={() => setChildrenInput(childrenInput - 1)}>-</p>
-            <p>{childrenInput}</p>
-            <p onClick={() => setChildrenInput(childrenInput + 1)}>+</p>
+            <button
+              onClick={e => {
+                e.preventDefault()
+                setBooking({ ...booking, children: booking.children - 1 })
+              }}
+            >
+              -
+            </button>
+            <p>{booking.children}</p>
+            <button
+              onClick={e => {
+                e.preventDefault()
+                setBooking({ ...booking, children: booking.children + 1 })
+              }}
+            >
+              +
+            </button>
           </div>
         </div>
-        <button type="submit">Find Room</button>
+        <button
+          className="find-room-btn"
+          onClick={findRoomSubmitted}
+          type="submit"
+        >
+          Find Room
+        </button>
       </form>
     </>
   )

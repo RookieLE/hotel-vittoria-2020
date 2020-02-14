@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "../styles/room.scss"
 
-import Layout from "../components/layout"
+import Layout from "../layouts"
 
 import LakeViewPicture from "../images/hotel/lake-view-window.png"
 import LakeRoomPicture from "../images/hotel/bed-room-lake.jpg"

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import "../styles/room-card.scss"
 
 import LakeRoomPicture2 from "../images/hotel/bed-room-lake.png"
@@ -30,19 +31,19 @@ const RoomCard = () => {
         <div className="what-include">
           <ul>
             <li>
-              <img src={TvIcon} alt="" /> Smart TV
+              <img src={TvIcon} alt="tv icon" /> Smart TV
             </li>
             <li>
-              <img src={FridgeIcon} alt="" /> Mini Fridge
+              <img src={FridgeIcon} alt="mini fridge icon" /> Mini Fridge
             </li>
             <li>
-              <img src={CoolingIcon} alt="" /> Cooling
+              <img src={CoolingIcon} alt="cooling icon" /> Cooling
             </li>
             <li>
-              <img src={ParkingIcon} alt="" /> Parking
+              <img src={ParkingIcon} alt="parking icon" /> Parking
             </li>
             <li>
-              <img src={WifiIcon} alt="" /> High Speed Wi-Fi
+              <img src={WifiIcon} alt="wifi icon" /> High Speed Wi-Fi
             </li>
           </ul>
         </div>
@@ -51,19 +52,19 @@ const RoomCard = () => {
         <p>The room price also includes: </p>
         <ul>
           <li>
-            <img src={TvIcon} alt="" /> Smart TV
+            <img src={TvIcon} alt="tv icon" /> Smart TV
           </li>
           <li>
-            <img src={FridgeIcon} alt="" /> Mini Fridge
+            <img src={FridgeIcon} alt="mini fridge icon" /> Mini Fridge
           </li>
           <li>
-            <img src={CoolingIcon} alt="" /> Cooling
+            <img src={CoolingIcon} alt="cooling icon" /> Cooling
           </li>
           <li>
-            <img src={ParkingIcon} alt="" /> Parking
+            <img src={ParkingIcon} alt="parking icon" /> Parking
           </li>
           <li>
-            <img src={WifiIcon} alt="" /> High Speed Wi-Fi
+            <img src={WifiIcon} alt="wifi icon" /> High Speed Wi-Fi
           </li>
         </ul>
       </div>
@@ -121,9 +122,9 @@ const RoomCard = () => {
           <span className="n-night">5</span> night
         </p>
       </div>
-      <a href="/contact" className="book-btn">
+      <Link to="/contact" className="book-btn">
         Book Room
-      </a>
+      </Link>
     </section>
   )
 }

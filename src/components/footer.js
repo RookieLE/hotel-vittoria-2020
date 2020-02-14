@@ -31,7 +31,11 @@ const Footer = () => {
         <h5>© COPYRIGHT HOTEL VITTORIA {currentYear} - ALL RIGHTS RESERVED.</h5>
         <p>
           Made and design by{" "}
-          <a target="_BLANK" href="https://leonardotononi.com">
+          <a
+            rel="noopener noreferrer"
+            target="_BLANK"
+            href="https://leonardotononi.com"
+          >
             Leonardo Tononi
           </a>
         </p>

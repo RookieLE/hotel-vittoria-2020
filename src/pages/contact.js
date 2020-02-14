@@ -1,6 +1,6 @@
 import React from "react"
 import "../styles/contact.scss"
-import Layout from "../components/layout"
+import Layout from "../layouts"
 
 import FbIcon from "../images/icons/facebook.png"
 import MapIcon from "../images/icons/google-maps.png"

@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/index.scss"
 
-import Layout from "../components/layout"
+import Layout from "../layouts"
 import RoomFinder from "../components/room-finder"
 
 import BedRoom from "../images/hotel/bed-room-header.png"

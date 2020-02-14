@@ -15,7 +15,11 @@ const BookingPage = ({ location }) => (
   <>
     <Layout>
       <header className="header-index">
-        <h2>Find a room and keep an eye on our last minute discounts.</h2>
+        <div className="header-text">
+          <h1>
+            Keep an eye on our last minute <mark>discounts.</mark>
+          </h1>
+        </div>
         <img
           display={{ objectFit: "cover" }}
           src={LakeRoomPicture}

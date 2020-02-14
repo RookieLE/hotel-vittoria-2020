@@ -1,8 +1,8 @@
 import React from "react"
+import { Link } from "gatsby"
 import "../styles/index.scss"
 
 import Layout from "../layouts"
-import RoomFinder from "../components/room-finder"
 
 import BedRoom from "../images/hotel/bed-room-header.png"
 import Pool from "../images/hotel/swimming-pool.png"
@@ -14,7 +14,16 @@ const IndexPage = () => (
   <>
     <Layout>
       <header className="header-index">
-        <h2>A cozy and welcoming place in the heart of Toscolano Maderno.</h2>
+        <div className="header-text">
+          <h1>
+            A fantastic stay <br />
+            for you
+          </h1>
+          <h2>We are an happy family that works here from generations.</h2>
+          <div className="book-action">
+            <Link to="/booking">Book a room</Link>
+          </div>
+        </div>
         <img
           display={{ objectFit: "cover" }}
           src={BedRoom}
@@ -27,7 +36,6 @@ const IndexPage = () => (
           className="img-desktop-header"
         />
       </header>
-      <RoomFinder />
       <section className="section-index">
         <div className="title">
           <p>Welcome to the</p>
@@ -65,7 +73,7 @@ const IndexPage = () => (
           </p>
         </div>
         <div className="book-action">
-          <a href="/booking">Book a room</a>
+          <Link to="/booking">Book a room</Link>
         </div>
       </section>
       <div className="image-section">

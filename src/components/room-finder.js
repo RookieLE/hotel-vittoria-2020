@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react"
-import { navigate } from "gatsby"
 import "../styles/room-finder.scss"
 
 import DateRangeInput from "./date-range-input"
@@ -8,10 +7,28 @@ import { BookingFinderContext } from "../context/BookFinderContext"
 
 const RoomFinder = ({ location }) => {
   const [toggleRoomFinder, setToggleRoomFinder] = useState(true)
+  const [toggleModal, setToggleModal] = useState(false)
   const [booking, setBooking] = useContext(BookingFinderContext)
 
   const findRoomSubmitted = e => {
     e.preventDefault()
+    setToggleModal(!toggleModal)
+  }
+
+  const transformDate = input => {
+    let date = new Date(input)
+    let year = date.getFullYear()
+    let month = date.getMonth() + 1
+    let dt = date.getDate()
+
+    if (dt < 10) {
+      dt = "0" + dt
+    }
+    if (month < 10) {
+      month = "0" + month
+    }
+
+    return `${dt}/${month}/${year}`
   }
   return (
     <>
@@ -146,6 +163,18 @@ const RoomFinder = ({ location }) => {
           Find Room
         </button>
       </form>
+
+      {toggleModal ? (
+        <div className="modal">
+          <h1>I'm working on with the booking.com api...</h1>
+          <p>Meanwhile this is the data form:</p>
+          <p>Check in: {transformDate(booking.startDate)}</p>
+          <p>Check out: {transformDate(booking.endDate)}</p>
+          <p>Adults: {booking.adults}</p>
+          <p>Children: {booking.children}</p>
+          <button onClick={() => setToggleModal(!toggleModal)}>Close</button>
+        </div>
+      ) : null}
     </>
   )
 }

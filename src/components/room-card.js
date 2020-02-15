@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import "../styles/room-card.scss"
 
-import LakeRoomPicture2 from "../images/hotel/bed-room-lake.png"
+import LakeBedRoom from "../images/hotel/bed-room-lake.png"
 
 import TvIcon from "../images/icons/tv.png"
 import FridgeIcon from "../images/icons/fridge.png"
@@ -10,16 +10,16 @@ import CoolingIcon from "../images/icons/cooling.png"
 import ParkingIcon from "../images/icons/parking.png"
 import WifiIcon from "../images/icons/wifi.png"
 
-const RoomCard = () => {
+const RoomCard = ({ price, img, type }) => {
   const [toggleIncluded, setToggleIncluded] = useState(false)
   const [toggleInfo, setToggleInfo] = useState(false)
   return (
     <section className="room-card-container">
       <div className="title">
-        <h3>Lake View</h3>
+        <h3>{type}</h3>
       </div>
       <div className="img-tv">
-        <img src={LakeRoomPicture2} alt="hotel room with bed king size" />
+        <img src={img} alt="hotel room with bed king size" />
       </div>
       <div
         className="what-included-btn"
@@ -115,7 +115,7 @@ const RoomCard = () => {
 
       <div className="price">
         <p>
-          <span className="price-num">€ 90</span> / night
+          <span className="price-num">€ {price}</span> / night
         </p>
         <p>
           <span className="total">€ 450,00</span> for{" "}

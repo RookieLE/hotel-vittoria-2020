@@ -1,35 +1,29 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import "../styles/room-finder.scss"
 
 import DateRangeInput from "./date-range-input"
 
-import { BookingFinderContext } from "../context/BookFinderContext"
-
-const RoomFinder = ({ location }) => {
+const RoomFinder = ({
+  booking,
+  setBooking,
+  toggleFind,
+  setToggleFind,
+  setFilteredRooms,
+}) => {
   const [toggleRoomFinder, setToggleRoomFinder] = useState(true)
-  const [toggleModal, setToggleModal] = useState(false)
-  const [booking, setBooking] = useContext(BookingFinderContext)
 
-  const findRoomSubmitted = e => {
+  const onSubmit = e => {
     e.preventDefault()
-    setToggleModal(!toggleModal)
+
+    if (toggleFind === "finding") {
+      setToggleFind(" ", () =>
+        setFilteredRooms([], () => setToggleFind("finding"))
+      )
+    } else {
+      setToggleFind("finding")
+    }
   }
 
-  const transformDate = input => {
-    let date = new Date(input)
-    let year = date.getFullYear()
-    let month = date.getMonth() + 1
-    let dt = date.getDate()
-
-    if (dt < 10) {
-      dt = "0" + dt
-    }
-    if (month < 10) {
-      month = "0" + month
-    }
-
-    return `${dt}/${month}/${year}`
-  }
   return (
     <>
       {toggleRoomFinder ? (
@@ -42,7 +36,7 @@ const RoomFinder = ({ location }) => {
           <form className="form-room-finder" action="">
             <div className="col date">
               <h5>Date</h5>
-              <DateRangeInput />
+              <DateRangeInput booking={booking} setBooking={setBooking} />
             </div>
             <div className="col adults">
               <h5>Adults</h5>
@@ -88,11 +82,7 @@ const RoomFinder = ({ location }) => {
                 </button>
               </div>
             </div>
-            <button
-              className="find-room-btn"
-              onClick={findRoomSubmitted}
-              type="submit"
-            >
+            <button className="find-room-btn" onClick={onSubmit} type="submit">
               Find Room
             </button>
           </form>
@@ -109,7 +99,7 @@ const RoomFinder = ({ location }) => {
       <form className="form-room-finder-desktop" action="">
         <div className="col date">
           <h5>Date</h5>
-          <DateRangeInput />
+          <DateRangeInput booking={booking} setBooking={setBooking} />
         </div>
         <div className="col adults">
           <h5>Adults</h5>
@@ -155,26 +145,10 @@ const RoomFinder = ({ location }) => {
             </button>
           </div>
         </div>
-        <button
-          className="find-room-btn"
-          onClick={findRoomSubmitted}
-          type="submit"
-        >
+        <button className="find-room-btn" onClick={onSubmit} type="submit">
           Find Room
         </button>
       </form>
-
-      {toggleModal ? (
-        <div className="modal">
-          <h1>I'm working on with the booking.com api...</h1>
-          <p>Meanwhile this is the data form:</p>
-          <p>Check in: {transformDate(booking.startDate)}</p>
-          <p>Check out: {transformDate(booking.endDate)}</p>
-          <p>Adults: {booking.adults}</p>
-          <p>Children: {booking.children}</p>
-          <button onClick={() => setToggleModal(!toggleModal)}>Close</button>
-        </div>
-      ) : null}
     </>
   )
 }

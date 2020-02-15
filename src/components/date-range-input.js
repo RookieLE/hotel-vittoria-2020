@@ -1,14 +1,11 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { enGB } from "date-fns/locale"
 import { DateRangePicker, START_DATE, END_DATE } from "react-nice-dates"
 import "react-nice-dates/build/style.css"
 
-import { BookingFinderContext } from "../context/BookFinderContext"
-
-const DateRangeInput = () => {
+const DateRangeInput = ({ booking, setBooking }) => {
   const [startDate, setStartDate] = useState()
   const [endDate, setEndDate] = useState()
-  const [booking, setBooking] = useContext(BookingFinderContext)
 
   useEffect(() => {
     if (startDate && endDate !== undefined) {
@@ -31,12 +28,14 @@ const DateRangeInput = () => {
             className={"input" + (focus === START_DATE ? " -focused" : "")}
             {...startDateInputProps}
             placeholder="Check-in"
+            required
           />
           <span className="date-range_arrow" />
           <input
             className={"input" + (focus === END_DATE ? " -focused" : "")}
             {...endDateInputProps}
             placeholder="Check-out"
+            required
           />
         </div>
       )}

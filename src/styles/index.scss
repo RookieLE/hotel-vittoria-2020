@@ -87,10 +87,12 @@
     }
 
     h3 {
-      font-size: 1.5rem;
-      padding: 1.5rem 0;
+      text-transform: uppercase;
+      padding: 1rem 0;
       font-weight: 600;
       line-height: 2.5rem;
+      font-size: 1.6rem;
+      letter-spacing: 1.5px;
     }
   }
 
@@ -133,32 +135,6 @@
     width: 100%;
   }
 }
-
-/* .bg-image {
-  width: 250px;
-  height: 110px;
-  position: relative;
-  background-color: white;
-  bottom: 165px;
-  left: 50%;
-  margin-left: -125px;
-  border-radius: 10px;
-  box-shadow: 0 0 25px 0 #00000030;
-  z-index: 1;
-}
-
-.bg-image-small {
-  width: 200px;
-  height: 120px;
-  position: relative;
-  background-color: white;
-  left: 50%;
-  bottom: 275px;
-  margin-left: -100px;
-  border-radius: 10px;
-  box-shadow: 0 0 25px 0 #00000030;
-  z-index: 0;
-} */
 
 @media only screen and (max-width: 350px) {
   .header-index {
@@ -214,6 +190,11 @@
     height: 750px;
     max-width: 900px;
     margin: 10rem 10rem 0 4rem;
+
+    .title h3 {
+      padding: 0.5rem 0;
+      font-size: 1.8rem;
+    }
   }
 
   .image-section {
@@ -242,6 +223,7 @@
   .header-index {
     .header-text {
       top: 27%;
+
       h1 {
         font-size: 8rem;
         line-height: 7rem;
@@ -256,6 +238,7 @@
 
       .book-action {
         padding-top: 5rem;
+
         a {
           padding: 1.1rem 1.4rem;
           font-size: 1.4rem;

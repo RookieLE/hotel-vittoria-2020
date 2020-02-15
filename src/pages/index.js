@@ -19,7 +19,9 @@ const IndexPage = () => (
             A fantastic stay <br />
             for you
           </h1>
-          <h2>We are an happy family that works here from generations.</h2>
+          <h2>
+            We are a happy family that has been working here for generations.
+          </h2>
           <div className="book-action">
             <Link to="/booking">Book a room</Link>
           </div>

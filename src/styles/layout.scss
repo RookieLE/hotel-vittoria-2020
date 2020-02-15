@@ -120,8 +120,11 @@ button {
 
     .close-btn {
       position: absolute;
+      right: 10px;
       top: 10px;
-      right: 15px;
+      background-color: #ceffbd;
+      padding: 8px 12px;
+      border-radius: 50%;
 
       img {
         width: 15px;

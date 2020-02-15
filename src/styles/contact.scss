@@ -23,7 +23,7 @@
 
   h3 {
     color: $deep-blue;
-    font-size: 1.2rem;
+    font-size: 3rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -70,8 +70,7 @@
     button {
       margin: 2rem 0;
       padding: 1rem;
-      border-radius: 5px;
-      width: 50%;
+      width: 40%;
       border: none;
       outline: none;
       font-size: 1.2rem;
@@ -96,7 +95,11 @@
   }
 
   .contact-form {
-    height: 80vh;
-    padding: 20rem 2rem 5rem 2rem;
+    height: 100%;
+    padding: 15rem 2rem 5rem 2rem;
+
+    h3 {
+      font-size: 8rem;
+    }
   }
 }

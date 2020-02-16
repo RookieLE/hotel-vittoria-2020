@@ -8,15 +8,16 @@ const RoomFinder = ({
   setBooking,
   onSubmitFind,
   setOnSubmitFind,
-  setFilteredRooms,
-  findRoom,
+
+  handleScrollEffect,
 }) => {
   const [toggleRoomFinder, setToggleRoomFinder] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault()
     setOnSubmitFind("FINDING")
-    console.log("==== SUBMITTED TRUE =====")
+    setToggleRoomFinder(false)
+    handleScrollEffect()
   }
 
   return (

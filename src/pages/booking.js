@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react"
 
 import "../styles/booking.scss"
 
+import scrollTo from "gatsby-plugin-smoothscroll"
+
 import { ROOMS } from "../database/rooms"
 
 import Layout from "../layouts"
@@ -24,13 +26,8 @@ const BookingPage = () => {
   })
   const [onSubmitFind, setOnSubmitFind] = useState("DEFAULT")
   const [filteredRooms, setFilteredRooms] = useState([])
-  const [notAvailableMsg, setNotAvailableMsg] = useState(false)
+  const [season, setSeason] = useState("LOW")
 
-  /*   useEffect(() => {
-   console.log("START: ", Date.parse(booking.startDate))
-    console.log("END: ", Date.parse(booking.endDate)) 
-  }, [filteredRooms])
- */
   useEffect(() => {
     /* if (onSubmitFind === true && filteredRooms !== false) {
       setBooking({ startDate: "", endDate: "", adults: 0, children: 0 })
@@ -39,15 +36,27 @@ const BookingPage = () => {
       findRoom()
     } else if (onSubmitFind === "COMPLETED") {
       setBooking({ startDate: "", endDate: "", adults: 0, children: 0 })
+      setSeason("LOW")
     }
   }, [onSubmitFind])
+
+  const handleScrollEffect = () => {
+    scrollTo("#scrollTo")
+  }
 
   const findRoom = () => {
     const startHighSeason = 1593554400000
     const endHighSeason = 1600120800000
+    const startBookDate = Date.parse(booking.startDate)
+    const endBookDate = Date.parse(booking.endDate)
+    console.log(startBookDate, endBookDate)
     const totalPerson = booking.adults + booking.children
     const roomFilteredForTotal = ROOMS.filter(room => room.for === totalPerson)
-    console.log(roomFilteredForTotal)
+    if (startBookDate >= startHighSeason && endBookDate <= endHighSeason) {
+      setSeason("HIGH")
+    } else {
+      setSeason("LOW")
+    }
     if (roomFilteredForTotal.length === 0) {
       return setOnSubmitFind("NOT_FINDED")
     }
@@ -81,7 +90,7 @@ const BookingPage = () => {
 
   const filteredRoomsUI = filteredRooms.map(room => (
     <RoomCard
-      price={room.priceHighSeason}
+      price={season === "HIGH" ? room.priceHighSeason : room.priceLowSeason}
       img={room.imageUrl}
       type={room.type}
       key={room.id}
@@ -94,21 +103,21 @@ const BookingPage = () => {
     }
     if (onSubmitFind === "DEFAULT") {
       return (
-        <section className="room-card-placeholder">
+        <section className="room-card-placeholder" id="scrollTo">
           <h1>You need to find a room before.</h1>
         </section>
       )
     }
     if (onSubmitFind === "FINDING") {
       return (
-        <section className="room-card-placeholder">
+        <section className="room-card-placeholder" id="scrollTo">
           <h1>Wait...I'm finding a room for you</h1>
         </section>
       )
     }
     if (onSubmitFind === "NOT_FINDED") {
       return (
-        <section className="room-card-placeholder warning">
+        <section className="room-card-placeholder warning" id="scrollTo">
           <h1>
             Sorry, <br /> the room selected is not available.
           </h1>
@@ -144,8 +153,9 @@ const BookingPage = () => {
           onSubmitFind={onSubmitFind}
           setOnSubmitFind={setOnSubmitFind}
           setFilteredRooms={setFilteredRooms}
-          findRoom={findRoom}
+          handleScrollEffect={handleScrollEffect}
         />
+        <div id="scrollTo"></div>
         {logic()}
       </Layout>
     </>

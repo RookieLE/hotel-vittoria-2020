@@ -48,9 +48,10 @@
         background-color: $mint;
         border: none;
         padding: 1rem 1.4rem;
+        transition: background-color 150ms ease-in;
 
         &:hover {
-          transform: scale(1.05);
+          background-color: #a1d48f;
         }
       }
     }

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
 
+import "../styles/booking.scss"
+
 import { ROOMS } from "../database/rooms"
 
 import Layout from "../layouts"
@@ -20,25 +22,37 @@ const BookingPage = () => {
     adults: 0,
     children: 0,
   })
-  const [toggleFind, setToggleFind] = useState(" ")
+  const [onSubmitFind, setOnSubmitFind] = useState("DEFAULT")
   const [filteredRooms, setFilteredRooms] = useState([])
+  const [notAvailableMsg, setNotAvailableMsg] = useState(false)
 
+  /*   useEffect(() => {
+   console.log("START: ", Date.parse(booking.startDate))
+    console.log("END: ", Date.parse(booking.endDate)) 
+  }, [filteredRooms])
+ */
   useEffect(() => {
-    /*  console.log("START: ", Date.parse(booking.startDate))
-    console.log("END: ", Date.parse(booking.endDate)) */
-  }, [booking])
-
-  useEffect(() => {
-    findRoom()
-  }, [toggleFind])
+    /* if (onSubmitFind === true && filteredRooms !== false) {
+      setBooking({ startDate: "", endDate: "", adults: 0, children: 0 })
+    } */
+    if (onSubmitFind === "FINDING") {
+      findRoom()
+    } else if (onSubmitFind === "COMPLETED") {
+      setBooking({ startDate: "", endDate: "", adults: 0, children: 0 })
+    }
+  }, [onSubmitFind])
 
   const findRoom = () => {
     const startHighSeason = 1593554400000
     const endHighSeason = 1600120800000
     const totalPerson = booking.adults + booking.children
-
     const roomFilteredForTotal = ROOMS.filter(room => room.for === totalPerson)
+    console.log(roomFilteredForTotal)
+    if (roomFilteredForTotal.length === 0) {
+      return setOnSubmitFind("NOT_FINDED")
+    }
     setFilteredRooms(roomFilteredForTotal)
+    setOnSubmitFind("COMPLETED")
   }
 
   const checkIfInputAreFilled = callback => {
@@ -65,6 +79,44 @@ const BookingPage = () => {
     return `${dt}/${month}/${year}`
   }
 
+  const filteredRoomsUI = filteredRooms.map(room => (
+    <RoomCard
+      price={room.priceHighSeason}
+      img={room.imageUrl}
+      type={room.type}
+      key={room.id}
+    />
+  ))
+
+  const logic = () => {
+    if (onSubmitFind === "COMPLETED") {
+      return filteredRoomsUI
+    }
+    if (onSubmitFind === "DEFAULT") {
+      return (
+        <section className="room-card-placeholder">
+          <h1>You need to find a room before.</h1>
+        </section>
+      )
+    }
+    if (onSubmitFind === "FINDING") {
+      return (
+        <section className="room-card-placeholder">
+          <h1>Wait...I'm finding a room for you</h1>
+        </section>
+      )
+    }
+    if (onSubmitFind === "NOT_FINDED") {
+      return (
+        <section className="room-card-placeholder warning">
+          <h1>
+            Sorry, <br /> the room selected is not available.
+          </h1>
+        </section>
+      )
+    }
+  }
+
   return (
     <>
       <Layout>
@@ -89,22 +141,12 @@ const BookingPage = () => {
         <RoomFinder
           booking={booking}
           setBooking={setBooking}
-          toggleFind={toggleFind}
-          setToggleFind={setToggleFind}
+          onSubmitFind={onSubmitFind}
+          setOnSubmitFind={setOnSubmitFind}
           setFilteredRooms={setFilteredRooms}
+          findRoom={findRoom}
         />
-        {filteredRooms !== [] ? (
-          filteredRooms.map(room => (
-            <RoomCard
-              price={room.priceHighSeason}
-              img={room.imageUrl}
-              type={room.type}
-              key={room.id}
-            />
-          ))
-        ) : (
-          <div>Insert data inside the finder</div>
-        )}
+        {logic()}
       </Layout>
     </>
   )

@@ -263,6 +263,16 @@ footer {
         color: white;
         text-align: center;
         padding: 1rem;
+        transition: background-color 150ms ease-in;
+
+        &:hover {
+          background-color: $mint;
+          border: 2px solid $mint;
+
+          li {
+            color: $deep-blue;
+          }
+        }
 
         li {
           padding: 0;
@@ -317,6 +327,15 @@ footer {
         color: white;
         text-align: center;
         padding: 1rem;
+        transition: background-color 150ms ease-in;
+
+        &:hover {
+          background-color: $medium-blue;
+
+          li {
+            color: white;
+          }
+        }
 
         li {
           padding: 0;

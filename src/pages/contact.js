@@ -34,12 +34,14 @@ const ContactPage = props => {
         </form>
         <section className="contact-page-header socials">
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href="https://www.facebook.com/LaVittoriadiMaderno/"
           >
             <img src={FbIcon} alt="facebook icon" />
           </a>
           <a
+            rel="noopener noreferrer"
             target="_blank"
             href="https://www.google.com/maps/place/Hotel+Vittoria/@45.6382209,10.6006442,17z/data=!3m1!4b1!4m7!3m6!1s0x0:0xdfe1e097a1faebc6!5m1!1s2018-04-16!8m2!3d45.638064!4d10.602875?hl=it"
           >

@@ -3,7 +3,7 @@ import { enGB } from "date-fns/locale"
 import { DateRangePicker, START_DATE, END_DATE } from "react-nice-dates"
 import "react-nice-dates/build/style.css"
 
-const DateRangeInput = ({ booking, setBooking }) => {
+const DateRangeInput = ({ booking, setBooking, onSubmitFind }) => {
   const [startDate, setStartDate] = useState()
   const [endDate, setEndDate] = useState()
 
@@ -12,6 +12,14 @@ const DateRangeInput = ({ booking, setBooking }) => {
       setBooking({ ...booking, startDate, endDate })
     } else return
   }, [startDate, endDate])
+
+  useEffect(() => {
+    if (onSubmitFind === "COMPLETED") {
+      setStartDate()
+      setEndDate()
+      console.log("CLEARED INPUT DATE", console.log(startDate, endDate))
+    }
+  }, [onSubmitFind])
   return (
     <DateRangePicker
       startDate={startDate}

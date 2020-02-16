@@ -61,7 +61,9 @@ const Navbar = contactPagePath => {
           <Link className="logo" to="/">
             <h1>Hotel Vittoria</h1>
           </Link>
-
+          <Link to="/">
+            <li>Home</li>
+          </Link>
           <Link to="/room">
             <li>Rooms</li>
           </Link>

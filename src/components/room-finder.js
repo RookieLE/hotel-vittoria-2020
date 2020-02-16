@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../styles/room-finder.scss"
 
 import DateRangeInput from "./date-range-input"
@@ -6,22 +6,17 @@ import DateRangeInput from "./date-range-input"
 const RoomFinder = ({
   booking,
   setBooking,
-  toggleFind,
-  setToggleFind,
+  onSubmitFind,
+  setOnSubmitFind,
   setFilteredRooms,
+  findRoom,
 }) => {
-  const [toggleRoomFinder, setToggleRoomFinder] = useState(true)
+  const [toggleRoomFinder, setToggleRoomFinder] = useState(false)
 
-  const onSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault()
-
-    if (toggleFind === "finding") {
-      setToggleFind(" ", () =>
-        setFilteredRooms([], () => setToggleFind("finding"))
-      )
-    } else {
-      setToggleFind("finding")
-    }
+    setOnSubmitFind("FINDING")
+    console.log("==== SUBMITTED TRUE =====")
   }
 
   return (
@@ -33,10 +28,14 @@ const RoomFinder = ({
               Close
             </button>
           </div>
-          <form className="form-room-finder" action="">
+          <form className="form-room-finder" action="" onSubmit={handleSubmit}>
             <div className="col date">
               <h5>Date</h5>
-              <DateRangeInput booking={booking} setBooking={setBooking} />
+              <DateRangeInput
+                booking={booking}
+                setBooking={setBooking}
+                onSubmitFind={onSubmitFind}
+              />
             </div>
             <div className="col adults">
               <h5>Adults</h5>
@@ -49,7 +48,7 @@ const RoomFinder = ({
                 >
                   -
                 </button>
-                <p>{booking.adults}</p>
+                <input type="number" value={booking.adults} readOnly />
                 <button
                   onClick={e => {
                     e.preventDefault()
@@ -71,7 +70,7 @@ const RoomFinder = ({
                 >
                   -
                 </button>
-                <p>{booking.children}</p>
+                <input type="number" value={booking.children} readOnly />
                 <button
                   onClick={e => {
                     e.preventDefault()
@@ -82,7 +81,7 @@ const RoomFinder = ({
                 </button>
               </div>
             </div>
-            <button className="find-room-btn" onClick={onSubmit} type="submit">
+            <button className="find-room-btn" type="submit">
               Find Room
             </button>
           </form>
@@ -96,7 +95,11 @@ const RoomFinder = ({
           <button>Find a Room</button>
         </section>
       )}
-      <form className="form-room-finder-desktop" action="">
+      <form
+        className="form-room-finder-desktop"
+        onSubmit={handleSubmit}
+        action=""
+      >
         <div className="col date">
           <h5>Date</h5>
           <DateRangeInput booking={booking} setBooking={setBooking} />
@@ -112,7 +115,7 @@ const RoomFinder = ({
             >
               -
             </button>
-            <p>{booking.adults}</p>
+            <input type="number" value={booking.adults} readOnly></input>
             <button
               onClick={e => {
                 e.preventDefault()
@@ -134,7 +137,7 @@ const RoomFinder = ({
             >
               -
             </button>
-            <p>{booking.children}</p>
+            <input type="number" value={booking.children} readOnly></input>
             <button
               onClick={e => {
                 e.preventDefault()
@@ -145,7 +148,7 @@ const RoomFinder = ({
             </button>
           </div>
         </div>
-        <button className="find-room-btn" onClick={onSubmit} type="submit">
+        <button className="find-room-btn" type="submit">
           Find Room
         </button>
       </form>

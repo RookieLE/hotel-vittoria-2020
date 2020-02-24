@@ -10,7 +10,7 @@ import CoolingIcon from "../images/icons/cooling.png"
 import ParkingIcon from "../images/icons/parking.png"
 import WifiIcon from "../images/icons/wifi.png"
 
-const RoomCard = ({ price, img, type, breakfast, night }) => {
+const RoomCard = ({ price, img, type, breakfast }) => {
   const [toggleIncluded, setToggleIncluded] = useState(false)
   const [toggleInfo, setToggleInfo] = useState(false)
   return (
@@ -121,8 +121,8 @@ const RoomCard = ({ price, img, type, breakfast, night }) => {
           <span className="price-num">€ {price}</span> / night
         </p>
         <p>
-          <span className="total">€ {night * price}</span> for{" "}
-          <span className="n-night">{night}</span> night
+          <span className="total">€ 450,00</span> for{" "}
+          <span className="n-night">5</span> night
         </p>
       </div>
       <Link to="/contact" className="book-btn">

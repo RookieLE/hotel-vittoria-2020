@@ -10,7 +10,7 @@ import CoolingIcon from "../images/icons/cooling.png"
 import ParkingIcon from "../images/icons/parking.png"
 import WifiIcon from "../images/icons/wifi.png"
 
-const RoomCard = ({ price, img, type, breakfast, night }) => {
+const RoomCard = ({ price, img, type }) => {
   const [toggleIncluded, setToggleIncluded] = useState(false)
   const [toggleInfo, setToggleInfo] = useState(false)
   return (
@@ -98,21 +98,18 @@ const RoomCard = ({ price, img, type, breakfast, night }) => {
       <div className="city-tax">
         <p>At the final price it will added € 1,50 daily of city tax.</p>
         <div className="breakfast">
-          {breakfast ? (
-            <div className="is-included">
-              <p>
-                <mark>Breakfast is included.</mark>
-              </p>
-            </div>
-          ) : (
-            <div className="is-not-inclueded">
-              <p>
-                <mark>
-                  Breakfast is not included, you can have it for € 10 per day.
-                </mark>
-              </p>
-            </div>
-          )}
+          <div className="is-included">
+            <p>
+              <mark>Breakfast is included.</mark>
+            </p>
+          </div>
+          <div className="is-not-inclueded">
+            <p>
+              <mark>
+                Breakfast is not included, you can have it for € 10 per day.
+              </mark>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -121,8 +118,8 @@ const RoomCard = ({ price, img, type, breakfast, night }) => {
           <span className="price-num">€ {price}</span> / night
         </p>
         <p>
-          <span className="total">€ {night * price}</span> for{" "}
-          <span className="n-night">{night}</span> night
+          <span className="total">€ 450,00</span> for{" "}
+          <span className="n-night">5</span> night
         </p>
       </div>
       <Link to="/contact" className="book-btn">

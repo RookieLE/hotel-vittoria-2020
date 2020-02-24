@@ -121,7 +121,7 @@ const RoomCard = ({ price, img, type, breakfast, night }) => {
           <span className="price-num">€ {price}</span> / night
         </p>
         <p>
-          <span className="total">€ {night * price}</span> for{" "}
+          <span className="total">€ </span> for{" "}
           <span className="n-night">{night}</span> night
         </p>
       </div>

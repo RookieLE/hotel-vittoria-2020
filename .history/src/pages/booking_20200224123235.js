@@ -50,7 +50,6 @@ const BookingPage = () => {
     const endHighSeason = 1600120800000
     const startBookDate = Date.parse(booking.startDate)
     const endBookDate = Date.parse(booking.endDate)
-    setTotalNight((endBookDate - startBookDate) / 86400000)
     const totalPerson = booking.adults + booking.children
     const roomFilteredForTotal = ROOMS.filter(room => room.for === totalPerson)
     if (startBookDate >= startHighSeason && endBookDate <= endHighSeason) {

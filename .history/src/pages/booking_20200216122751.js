@@ -27,7 +27,6 @@ const BookingPage = () => {
   const [onSubmitFind, setOnSubmitFind] = useState("DEFAULT")
   const [filteredRooms, setFilteredRooms] = useState([])
   const [season, setSeason] = useState("LOW")
-  const [totalNight, setTotalNight] = useState(0)
 
   useEffect(() => {
     /* if (onSubmitFind === true && filteredRooms !== false) {
@@ -50,7 +49,7 @@ const BookingPage = () => {
     const endHighSeason = 1600120800000
     const startBookDate = Date.parse(booking.startDate)
     const endBookDate = Date.parse(booking.endDate)
-    setTotalNight((endBookDate - startBookDate) / 86400000)
+    console.log(startBookDate, endBookDate)
     const totalPerson = booking.adults + booking.children
     const roomFilteredForTotal = ROOMS.filter(room => room.for === totalPerson)
     if (startBookDate >= startHighSeason && endBookDate <= endHighSeason) {
@@ -89,18 +88,14 @@ const BookingPage = () => {
     return `${dt}/${month}/${year}`
   }
 
-  const filteredRoomsUI = filteredRooms.map(room => {
-    return (
-      <RoomCard
-        price={season === "HIGH" ? room.priceHighSeason : room.priceLowSeason}
-        img={room.imageUrl}
-        type={room.type}
-        breakfast={room.breakfast}
-        night={totalNight}
-        key={room.id}
-      />
-    )
-  })
+  const filteredRoomsUI = filteredRooms.map(room => (
+    <RoomCard
+      price={season === "HIGH" ? room.priceHighSeason : room.priceLowSeason}
+      img={room.imageUrl}
+      type={room.type}
+      key={room.id}
+    />
+  ))
 
   const logic = () => {
     if (onSubmitFind === "COMPLETED") {

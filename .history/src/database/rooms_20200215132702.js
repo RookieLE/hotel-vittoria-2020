@@ -10,7 +10,6 @@ export const ROOMS = [
     priceHighSeason: 90,
     priceLowSeason: 75,
     imageUrl: LakeView,
-    breakfast: true,
   },
   {
     type: "Lake view",
@@ -19,7 +18,6 @@ export const ROOMS = [
     priceHighSeason: 90,
     priceLowSeason: 75,
     imageUrl: LakeView,
-    breakfast: true,
   },
   {
     type: "Garden view",
@@ -28,7 +26,6 @@ export const ROOMS = [
     priceHighSeason: 55,
     priceLowSeason: 45,
     imageUrl: GardenView,
-    breakfast: false,
   },
   {
     type: "Garden view",
@@ -37,7 +34,6 @@ export const ROOMS = [
     priceHighSeason: 80,
     priceLowSeason: 70,
     imageUrl: GardenView,
-    breakfast: false,
   },
   {
     type: "Inside view",
@@ -46,7 +42,6 @@ export const ROOMS = [
     priceHighSeason: 70,
     priceLowSeason: 55,
     imageUrl: InsideView,
-    breakfast: false,
   },
   {
     type: "Inside view",
@@ -55,6 +50,5 @@ export const ROOMS = [
     priceHighSeason: 100,
     priceLowSeason: 85,
     imageUrl: InsideView,
-    breakfast: true,
   },
 ]

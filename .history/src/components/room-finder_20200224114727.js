@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
 import "../styles/room-finder.scss"
-
-import SearchIcon from "../images/icons/search.svg"
 import Loading from "./loading"
 import DateRangeInput from "./date-range-input"
 
@@ -90,7 +88,7 @@ const RoomFinder = ({
               </div>
             </div>
             <button className="find-room-btn" type="submit">
-              {isLoading ? <Loading isMobile /> : "Find room"}
+              {isLoading ? <Loading /> : "Find room"}
             </button>
           </form>
         </section>
@@ -99,7 +97,7 @@ const RoomFinder = ({
           className="room-finder-btn"
           onClick={() => setToggleRoomFinder(!toggleRoomFinder)}
         >
-          <img src={SearchIcon} alt="search icon" />
+          {/*  <img src={ArrowIcon} alt="" /> */}
           <button>Find a Room</button>
         </section>
       )}

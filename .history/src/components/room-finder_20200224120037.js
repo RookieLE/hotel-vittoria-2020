@@ -90,7 +90,7 @@ const RoomFinder = ({
               </div>
             </div>
             <button className="find-room-btn" type="submit">
-              {isLoading ? <Loading isMobile /> : "Find room"}
+              {isLoading ? <Loading /> : "Find room"}
             </button>
           </form>
         </section>
@@ -157,7 +157,7 @@ const RoomFinder = ({
           </div>
         </div>
         <button className="find-room-btn" type="submit">
-          {isLoading ? <Loading /> : "Find room"}
+          {isLoading ? <Loading isMobile={false} /> : "Find room"}
         </button>
       </form>
     </>

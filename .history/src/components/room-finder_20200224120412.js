@@ -14,7 +14,7 @@ const RoomFinder = ({
   handleScrollEffect,
 }) => {
   const [toggleRoomFinder, setToggleRoomFinder] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleSubmit = e => {
     e.preventDefault()

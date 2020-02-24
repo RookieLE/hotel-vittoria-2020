@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "../styles/room-finder.scss"
 
-import SearchIcon from "../images/icons/search.svg"
-import Loading from "./loading"
 import DateRangeInput from "./date-range-input"
 
 const RoomFinder = ({
@@ -14,17 +12,12 @@ const RoomFinder = ({
   handleScrollEffect,
 }) => {
   const [toggleRoomFinder, setToggleRoomFinder] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault()
-    setIsLoading(true)
-    setTimeout(() => {
-      setIsLoading(false)
-      setOnSubmitFind("FINDING")
-      setToggleRoomFinder(false)
-      handleScrollEffect()
-    }, 1000)
+    setOnSubmitFind("FINDING")
+    setToggleRoomFinder(false)
+    handleScrollEffect()
   }
 
   return (
@@ -90,7 +83,7 @@ const RoomFinder = ({
               </div>
             </div>
             <button className="find-room-btn" type="submit">
-              {isLoading ? <Loading isMobile /> : "Find room"}
+              Find Room
             </button>
           </form>
         </section>
@@ -99,7 +92,7 @@ const RoomFinder = ({
           className="room-finder-btn"
           onClick={() => setToggleRoomFinder(!toggleRoomFinder)}
         >
-          <img src={SearchIcon} alt="search icon" />
+          {/*  <img src={ArrowIcon} alt="" /> */}
           <button>Find a Room</button>
         </section>
       )}
@@ -157,7 +150,7 @@ const RoomFinder = ({
           </div>
         </div>
         <button className="find-room-btn" type="submit">
-          {isLoading ? <Loading /> : "Find room"}
+          Find Room
         </button>
       </form>
     </>

@@ -14,7 +14,7 @@ const RoomFinder = ({
   handleScrollEffect,
 }) => {
   const [toggleRoomFinder, setToggleRoomFinder] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -157,7 +157,7 @@ const RoomFinder = ({
           </div>
         </div>
         <button className="find-room-btn" type="submit">
-          {isLoading ? <Loading /> : "Find room"}
+          {isLoading ? <Loading isMobile={false} /> : "Find room"}
         </button>
       </form>
     </>

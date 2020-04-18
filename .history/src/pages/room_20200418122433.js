@@ -47,7 +47,7 @@ const RoomPage = ({data}) => {
         <section className="room-section" id="lake">
           <Img
             fluid={data.lakeView.childImageSharp.fluid}
-            style={{ position: "initial", objectFit: "cover", opacity: '0.5' }} alt="hotel bedroom so cool" />
+             style={{position: "initial", objectFit: "cover", opacity: '0.5'}} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Lake view</h3>
           </div>
@@ -102,8 +102,7 @@ const RoomPage = ({data}) => {
           ) : null}
         </section>
         <section className="room-section" id="inside">
-         <Img  fluid={data.insideView.childImageSharp.fluid}
-             style={{position: "initial", objectFit: "cover", opacity: '0.5'}}   alt="hotel bedroom so cool" />
+          <img src={InsideRoomPicture} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Inside view</h3>
           </div>

@@ -4,7 +4,14 @@ import "../styles/index.scss"
 
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+
 import Layout from "../layouts"
+
+import BedRoom from "../images/hotel/bed-room-header.png"
+import Pool from "../images/hotel/swimming-pool.png"
+import Garden from "../images/hotel/garden.png"
+import GardenSecondary from "../images/hotel/garden-secondary.png"
+import LakeRoomPicture from "../images/hotel/bed-room-lake.jpg"
 
 const IndexPage = ({ data }) => {
   
@@ -25,7 +32,20 @@ const IndexPage = ({ data }) => {
             <div className="book-action">
               <Link to="/booking">Book a room</Link>
             </div>
-          </div>         
+          </div>
+
+         {/*  <img
+            display={{ objectFit: "cover" }}
+            src={BedRoom}
+            alt="cozy bed room with lamp"
+            className="img-mobile-header"
+          />
+          <img
+            src={BedRoom}
+            alt="cozy bed room with lamp"
+            className="img-desktop-header"
+          /> */}
+           
           <Img
             fluid={data.headerImg.childImageSharp.fluid}
             style={{position: "initial", objectFit: "cover", opacity: '0.5'}}

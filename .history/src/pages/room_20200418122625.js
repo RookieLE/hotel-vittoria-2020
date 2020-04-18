@@ -48,7 +48,8 @@ const RoomPage = ({data}) => {
           <Img
             fluid={data.lakeView.childImageSharp.fluid}
             style={{ position: "initial", objectFit: "cover", opacity: '0.5' }} alt="hotel bedroom so cool" />
-          <div className="title">
+          <div className="header-text">
+<div className="title">
             <h3>Lake view</h3>
           </div>
           {toggleDetails ? null : (
@@ -58,6 +59,8 @@ const RoomPage = ({data}) => {
               </button>
             </div>
           )}
+          </div>
+          
 
           {toggleDetails ? (
             <div className="details">

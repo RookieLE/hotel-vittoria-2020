@@ -134,12 +134,23 @@ const BookingPage = () => {
   return (
     <>
       <Layout>
-        <header className="header-booking">
+        <header className="header-index">
           <div className="header-text">
             <h1>
               Keep an eye on our last minute <mark>discounts.</mark>
             </h1>
           </div>
+         {/*  <img
+            display={{ objectFit: "cover" }}
+            src={LakeRoomPicture}
+            alt="cozy bed room with lamp"
+            className="img-mobile-header"
+          />
+          <img
+            src={LakeRoomPicture2}
+            alt="cozy bed room with lamp"
+            className="img-desktop-header"
+          /> */}
         </header>
         <RoomFinder
           booking={booking}

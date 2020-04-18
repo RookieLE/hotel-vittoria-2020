@@ -134,7 +134,7 @@ const BookingPage = () => {
   return (
     <>
       <Layout>
-        <header className="header-booking">
+        <header className="header-index">
           <div className="header-text">
             <h1>
               Keep an eye on our last minute <mark>discounts.</mark>

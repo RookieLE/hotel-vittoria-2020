@@ -85,7 +85,7 @@
 }
 
 @media only screen and (max-width: 350px) {
-  .header-booking {
+  .header-index {
     .header-text {
       font-size: 1.3rem;
       width: 300px;
@@ -95,7 +95,7 @@
 }
 
 @media only screen and (min-width: 750px) {
-  .header-booking {
+  .header-index {
     .header-text {
       top: 35%;
       font-size: 2rem;
@@ -160,8 +160,7 @@
 } */
 
 @media only screen and (min-width: 1300px) {
-  .header-booking {
-    max-height: 1200px;
+  .header-index {
     .header-text {
       top: 27%;
 

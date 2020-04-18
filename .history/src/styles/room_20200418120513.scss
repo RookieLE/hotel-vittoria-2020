@@ -9,12 +9,10 @@
   .header-text {
     display: grid;
     place-content: center;
-    place-items: center;
-    grid-gap: 1rem;
+    z-index: 2;
 
     h2 {
       color: white;
-      z-index: 2;
       font-weight: 400;
       text-transform: uppercase;
       font-size: 2.5rem;
@@ -24,7 +22,6 @@
 
     p {
       color: white;
-      z-index: 2;
       text-align: center;
       font-weight: 400;
       letter-spacing: 1.2px;
@@ -153,46 +150,32 @@
 
 @media only screen and (min-width: 750px) {
   .room-page-header {
-
-    .header-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 800px;
-      margin-left: -400px;
-      height: 500px;
-      margin-top: -250px;
-
-      h2 {
-        letter-spacing: 1.3px;
-        width: 600px;
-        font-size: 6rem;
-      }
-
-      p {
-        font-size: 1.5rem;
-        letter-spacing: 1.3px;
-        line-height: 3rem;
-      }
+    h2 {
+      letter-spacing: 1.3px;
+      width: 600px;
+      font-size: 6rem;
     }
-  
 
+    p {
+      font-size: 1.5rem;
+      letter-spacing: 1.3px;
+      line-height: 3rem;
+    }
 
-
-  .actions h3 {
-    font-size: 2rem;
-  }
-}
-
-.room-section {
-  h3 {
-    font-size: 3rem;
-    width: 400px;
-    margin-left: -200px;
+    .actions h3 {
+      font-size: 2rem;
+    }
   }
 
-  .details .book-btn-container {
-    padding-top: 8rem;
+  .room-section {
+    h3 {
+      font-size: 3rem;
+      width: 400px;
+      margin-left: -200px;
+    }
+
+    .details .book-btn-container {
+      padding-top: 8rem;
+    }
   }
-}
 }

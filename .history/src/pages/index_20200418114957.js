@@ -4,6 +4,7 @@ import "../styles/index.scss"
 
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+
 import Layout from "../layouts"
 
 const IndexPage = ({ data }) => {

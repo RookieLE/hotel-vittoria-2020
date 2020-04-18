@@ -4,7 +4,14 @@ import "../styles/index.scss"
 
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
+
 import Layout from "../layouts"
+
+import BedRoom from "../images/hotel/bed-room-header.png"
+import Pool from "../images/hotel/swimming-pool.png"
+import Garden from "../images/hotel/garden.png"
+import GardenSecondary from "../images/hotel/garden-secondary.png"
+import LakeRoomPicture from "../images/hotel/bed-room-lake.jpg"
 
 const IndexPage = ({ data }) => {
   

@@ -1,16 +1,16 @@
 import React, { useState } from "react"
 import "../styles/room.scss"
-import Img from "gatsby-image"
-import { graphql } from "gatsby"
+
 import Layout from "../layouts"
 
+import LakeViewPicture from "../images/hotel/lake-view-window.png"
 import LakeRoomPicture from "../images/hotel/bed-room-lake.jpg"
 import GardenRoomPicture from "../images/hotel/garden-room-vertical.jpg"
 import InsideRoomPicture from "../images/hotel/intern-room-vertical.jpg"
 
 import scrollTo from "gatsby-plugin-smoothscroll"
 
-const RoomPage = ({data}) => {
+const RoomPage = () => {
   const [toggleDetails, setToggleDetails] = useState(false)
   const [toggleDetails2, setToggleDetails2] = useState(false)
   const [toggleDetails3, setToggleDetails3] = useState(false)
@@ -19,17 +19,12 @@ const RoomPage = ({data}) => {
     <>
       <Layout>
         <section className="room-page-header">
-          <Img
-            fluid={data.headerImg.childImageSharp.fluid}
-             style={{position: "initial", objectFit: "cover", opacity: '0.5'}}
+          <img
+            src={LakeViewPicture}
             alt="beautiful lake view from hotel bedroom"
           />
-          <div className="header-text">
-
-         <h2>An elegant touch</h2>
-            <p>Three different types of Rooms with a new minimal style.</p>
-            
-          </div>
+          <h2>An elegant touch</h2>
+          <p>Three different types of Rooms with a new minimal style.</p>
           <div className="actions">
             <button onClick={() => scrollTo("#lake")}>
               <h3>Lake</h3>
@@ -41,13 +36,10 @@ const RoomPage = ({data}) => {
               <h3>Garden</h3>
             </button>
           </div>
-         
         </section>
 
         <section className="room-section" id="lake">
-          <Img
-            fluid={data.lakeView.childImageSharp.fluid}
-            style={{ position: "initial", objectFit: "cover", opacity: '0.5' }} alt="hotel bedroom so cool" />
+          <img src={LakeRoomPicture} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Lake view</h3>
           </div>
@@ -74,8 +66,7 @@ const RoomPage = ({data}) => {
           ) : null}
         </section>
         <section className="room-section" id="garden">
-          <Img  fluid={data.gardenView.childImageSharp.fluid}
-             style={{position: "initial", objectFit: "cover", opacity: '0.5'}}  alt="hotel bedroom so cool" />
+          <img src={GardenRoomPicture} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Garden view</h3>
           </div>
@@ -102,8 +93,7 @@ const RoomPage = ({data}) => {
           ) : null}
         </section>
         <section className="room-section" id="inside">
-         <Img  fluid={data.insideView.childImageSharp.fluid}
-             style={{position: "initial", objectFit: "cover", opacity: '0.5'}}   alt="hotel bedroom so cool" />
+          <img src={InsideRoomPicture} alt="hotel bedroom so cool" />
           <div className="title">
             <h3>Inside view</h3>
           </div>
@@ -136,40 +126,3 @@ const RoomPage = ({data}) => {
 }
 
 export default RoomPage
-
-
-export const pageQuery = graphql`
-   query {
-     headerImg: file(relativePath: {eq: "lake-view-window.png"}) {
-       id
-       childImageSharp {
-         fluid(quality: 100) {
-           ...GatsbyImageSharpFluid
-         }
-       }
-    }
-    lakeView: file(relativePath: {eq: "bed-room-lake.jpg"}) {
-       id
-       childImageSharp {
-         fluid(quality: 100) {
-           ...GatsbyImageSharpFluid
-         }
-       }
-    }
-     gardenView: file(relativePath: {eq: "garden-room-vertical.jpg"}) {
-       id
-       childImageSharp {
-         fluid(quality: 100) {
-           ...GatsbyImageSharpFluid
-         }
-       }
-    }
-     insideView: file(relativePath: {eq: "intern-room-vertical.jpg"}) {
-       id
-       childImageSharp {
-         fluid(quality: 100) {
-           ...GatsbyImageSharpFluid
-         }
-       }
-    }
-}`

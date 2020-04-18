@@ -91,9 +91,9 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
         <div className="image-section">
-          <Img fluid={data.gardenImg.childImageSharp.fluid} alt="beautiful garden in the hotel" />
+          <img src={Garden} alt="beautiful garden in the hotel" />
           <div className="secondary-image-section">
-            <Img fluid={data.gardenSecondaryImg.childImageSharp.fluid} alt="beautiful garden in the hotel" />
+            <img src={GardenSecondary} alt="beautiful garden in the hotel" />
           </div>
         </div>
       </Layout>

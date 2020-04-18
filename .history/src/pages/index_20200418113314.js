@@ -70,7 +70,7 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
         <div className="image-section">
-          <Img fluid={data.hotelPollImg.childImageSharp.fluid} alt="hotel swimming pool and garden" />
+          <img src={Pool} alt="hotel swimming pool and garden" />
         </div>
         <section className="section-index">
           <div className="title">
@@ -91,9 +91,9 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
         <div className="image-section">
-          <Img fluid={data.gardenImg.childImageSharp.fluid} alt="beautiful garden in the hotel" />
+          <img src={Garden} alt="beautiful garden in the hotel" />
           <div className="secondary-image-section">
-            <Img fluid={data.gardenSecondaryImg.childImageSharp.fluid} alt="beautiful garden in the hotel" />
+            <img src={GardenSecondary} alt="beautiful garden in the hotel" />
           </div>
         </div>
       </Layout>
@@ -113,23 +113,7 @@ export const pageQuery = graphql`
          }
        }
     }
-    hotelPollImg: file(relativePath: {eq: "swimming-pool.png"}) {
-       id
-       childImageSharp {
-         fluid(quality: 100) {
-           ...GatsbyImageSharpFluid
-         }
-       }
-    }
-     gardenImg: file(relativePath: {eq: "garden.png"}) {
-       id
-       childImageSharp {
-         fluid(quality: 100) {
-           ...GatsbyImageSharpFluid
-         }
-       }
-    }
-     gardenSecondaryImg: file(relativePath: {eq: "garden-secondary.png"}) {
+    hotelPollImg: file(relativePath: {eq: "swimming-ppol.png"}) {
        id
        childImageSharp {
          fluid(quality: 100) {

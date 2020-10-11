@@ -188,6 +188,7 @@ footer {
     display: flex-inline;
     justify-content: space-between;
     padding: 30px 0; 
+
     a {
       margin: 0 10px;
       color: white;
@@ -286,6 +287,10 @@ footer {
 
       a {
         color: white;
+        
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       .booking-btn {

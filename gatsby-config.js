@@ -18,15 +18,6 @@ module.exports = {
         defaultQuality: 75,
       },
     },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `#ceffbd`,
-        // Disable the loading spinner.
-        showSpinner: true,
-      },
-    },
     `gatsby-plugin-sitemap`,
     "gatsby-plugin-robots-txt",
     `gatsby-plugin-smoothscroll`,

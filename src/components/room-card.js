@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import "../styles/room-card.scss"
-
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md"
 import LakeBedRoom from "../images/hotel/bed-room-lake.png"
 
 import TvIcon from "../images/icons/tv.png"
@@ -25,7 +25,9 @@ const RoomCard = ({ price, img, type, breakfast, night }) => {
         className="what-included-btn"
         onClick={() => setToggleIncluded(!toggleIncluded)}
       >
-        <h4>What is included ?</h4>
+        <h4 className={toggleIncluded ? "open" : null}>
+          <MdArrowDropUp /> What is included ?
+        </h4>
       </div>
       {toggleIncluded ? (
         <div className="what-include">
@@ -69,7 +71,9 @@ const RoomCard = ({ price, img, type, breakfast, night }) => {
         </ul>
       </div>
       <div className="info-btn" onClick={() => setToggleInfo(!toggleInfo)}>
-        <h4>Info</h4>
+        <h4 className={toggleInfo ? "open" : null}>
+          <MdArrowDropUp /> Info
+        </h4>
       </div>
       {toggleInfo ? (
         <div className="info">

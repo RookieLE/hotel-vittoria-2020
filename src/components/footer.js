@@ -22,11 +22,7 @@ const Footer = () => {
         <h4>info@vittoriahotel.eu</h4>
         <h4>P.iva 01558810980</h4>
       </div>
-      <div className="links">
-        <a href="#">Cookies</a>
-        <a href="#">Legal</a>
-        <a href="#">Privacy and Policy</a>
-      </div>
+
       <div className="btn-get-directions">
         <a
           href="https://www.google.com/maps/dir//hotel%20vittoria,%20toscolano%20maderno,%2025088,%20italy"
@@ -35,6 +31,13 @@ const Footer = () => {
           Get directions
         </a>
       </div>
+
+      <div className="links">
+        <a href="#">Cookies</a>
+        <a href="#">Legal</a>
+        <a href="#">Privacy and Policy</a>
+      </div>
+
       <div className="copyright">
         <h5>© COPYRIGHT HOTEL VITTORIA {currentYear} - ALL RIGHTS RESERVED.</h5>
         <p>

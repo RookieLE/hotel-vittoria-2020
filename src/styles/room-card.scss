@@ -3,7 +3,8 @@
 .room-card-container {
   padding: 4rem 1rem;
   max-width: 550px;
-  margin: 0 auto 8rem auto;
+  margin: 0 auto 60px auto;
+  background: #edf1f5;
   color: $deep-blue;
 
   .title {
@@ -59,7 +60,8 @@
     &:after {
       content: "";
       position: absolute;
-      margin-top: 10px;
+      left: 20px;
+      bottom: 30px;
       width: 80%;
       height: 2px;
       background-color: $medium-blue;
@@ -72,7 +74,19 @@
       text-transform: uppercase;
       letter-spacing: 1.2px;
       text-align: start;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        transform: rotate(90deg);
+        font-size: 30px;
+      }
     }
+
+
+
+
   }
 
   .info,
@@ -95,6 +109,12 @@
       font-size: 0.8rem;
       letter-spacing: 1px;
       line-height: 1.6rem;
+    }
+  }
+
+  .open {
+    svg {
+      transform: rotate(180deg);
     }
   }
 

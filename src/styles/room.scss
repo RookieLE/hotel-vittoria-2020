@@ -13,13 +13,14 @@
     grid-gap: 1rem;
 
     h2 {
-      color: white;
+      font-weight: 600;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      line-height: 4rem;
       z-index: 2;
-      font-weight: 400;
-      text-transform: uppercase;
-      font-size: 2.5rem;
-      letter-spacing: 1.2px;
+      color: white;
       text-align: center;
+      text-transform: capitalize;
     }
 
     p {
@@ -82,6 +83,20 @@
     object-fit: cover;
   }
 
+  .room-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 300px;
+    margin-left: -150px;
+    display: grid;
+    grid-gap: 40px;
+  }
+
+  .room-content-details {
+    top: 20%;
+  }
+
   h3 {
     color: white;
     font-size: 2rem;
@@ -90,7 +105,7 @@
     top: 40%;
     left: 50%;
     font-weight: 400;
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 1.2px;
     width: 300px;
     margin-left: -150px;
@@ -126,7 +141,6 @@
 
     .book-btn-container {
       text-align: center;
-      padding-top: 4rem;
 
       a {
         padding: 0.8rem 1rem;
@@ -138,15 +152,10 @@
 
     p {
       color: white;
-      position: relative;
-      top: 45%;
       text-align: center;
-      left: 50%;
       font-weight: 400;
       letter-spacing: 1.2px;
       line-height: 2.2rem;
-      width: 300px;
-      margin-left: -150px;
     }
   }
 }

@@ -90,7 +90,7 @@ const RoomFinder = ({
               </div>
             </div>
             <button className="find-room-btn" type="submit">
-              {isLoading ? <Loading isMobile /> : "Find room"}
+              {isLoading ? <Loading isMobile /> : "Search"}
             </button>
           </form>
         </section>
@@ -100,7 +100,7 @@ const RoomFinder = ({
           onClick={() => setToggleRoomFinder(!toggleRoomFinder)}
         >
           <img src={SearchIcon} alt="search icon" />
-          <button>Find a Room</button>
+          <button>Search</button>
         </section>
       )}
       <form
@@ -157,7 +157,7 @@ const RoomFinder = ({
           </div>
         </div>
         <button className="find-room-btn" type="submit">
-          {isLoading ? <Loading /> : "Find room"}
+          {isLoading ? <Loading /> : "Search"}
         </button>
       </form>
     </>

@@ -33,7 +33,7 @@
     font-weight: 300;
     letter-spacing: 1px;
     color: white;
-    text-transform: uppercase;
+    text-transform: capitalize;
     padding: 1rem 0;
     font-size: 1.2rem;
   }
@@ -119,10 +119,10 @@
     background-color: $mint;
     width: 100%;
     height: 100%;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: $deep-blue;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 20px;
     letter-spacing: 0.8px;
     place-self: center;
     border: none;
@@ -208,7 +208,7 @@
     font-family: "Montserrat", sans-serif;
     color: white;
     font-size: 0.8rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 200;
     letter-spacing: 1.4px;
     border: none;
@@ -241,7 +241,7 @@
     font-family: "Montserrat", sans-serif;
     color: white;
     font-size: 1.3rem;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 400;
     letter-spacing: 1.4px;
     background-color: transparent;
@@ -274,16 +274,15 @@
     grid-template-rows: 1fr;
     grid-template-areas: "date adults children btn";
     place-items: center;
-    height: 180px;
+    height: 150px;
     width: 100%;
     font-family: "Source Sans Pro", sans-serif;
     position: relative;
     display: grid;
-    bottom: 130px;
+    bottom: 100px;
     background-color: #2c4664;
     margin: 0 auto;
     max-width: 1200px;
-    border-radius: 50px;
     color: white;
     z-index: 999;
     box-shadow: 0px 0px 225px rgba(44, 70, 100, 0.6);
@@ -335,14 +334,13 @@
 
     .find-room-btn {
       grid-area: btn;
-      background-color: transparent;
+      background-color: #274161;
       width: 100%;
       height: 100%;
-      border-radius: 0 50px 50px 0;
-      text-transform: uppercase;
+      text-transform: capitalize;
       color: white;
       font-weight: 400;
-      font-size: 1.3rem;
+      font-size: 30px;
       letter-spacing: 0.8px;
       place-self: center;
       border: none;
@@ -359,9 +357,9 @@
       font-weight: 300;
       letter-spacing: 1px;
       color: white;
-      text-transform: uppercase;
+      text-transform: capitalize;
       padding: 1rem;
-      font-size: 1.2rem;
+      font-size: 24px;
     }
 
     .col {

@@ -7,11 +7,14 @@
   color: white;
   position: relative;
   height: 100vh;
+  max-height: 1000px;
 
   .header-text {
     z-index: 1;
-    padding: 2rem;
+    padding: 30px;
     position: relative;
+    display: grid;
+    grid-gap: 20px;
     max-width: 450px;
     margin: 0 auto;
     top: 16%;
@@ -21,7 +24,6 @@
       font-size: 3rem;
       letter-spacing: 2px;
       line-height: 4rem;
-      padding-bottom: 1.5rem;
     }
 
     h2 {
@@ -37,7 +39,7 @@
     }
 
     .book-action {
-      padding: 4rem 0;
+      padding: 30px 0;
       width: 100%;
 
       a {
@@ -64,7 +66,7 @@
 
 .section-index {
   background-color: white;
-  padding: 3rem;
+  padding: 30px;
   position: relative;
   height: 600px;
   max-width: 900px;
@@ -111,7 +113,7 @@
 
 .image-section {
   width: 100%;
-  padding: 5rem 0;
+  padding-bottom: 60px;
 
   img {
     width: 100%;
@@ -204,7 +206,7 @@
 @media only screen and (min-width: 1300px) {
   .header-index {
     .header-text {
-      top: 27%;
+      top: 180px;
 
       h1 {
         font-size: 8rem;
@@ -213,7 +215,7 @@
       }
 
       h2 {
-        max-width: 450px;
+        max-width: 750px;
         line-height: 3.5rem;
         font-size: 2.2rem;
       }

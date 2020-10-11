@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="stars">&#8902;&#8902;&#8902;</div>
       <div className="slogan">
-        <h4>For single For family. For couple. Pets welcome.</h4>
+        <h4>For single. For family. For couple. Pets welcome.</h4>
         <h4>
           <span>In two words,</span> for everyone
         </h4>
@@ -17,7 +17,7 @@ const Footer = () => {
         <h4>Italia</h4>
         <h4>Toscolano Maderno</h4>
         <h4>(BS) 25088</h4>
-        <h4>Via Benamati 114</h4>
+        <h4>Via Beneamati 114</h4>
         <h4>TEL. 0365 641320</h4>
         <h4>info@vittoriahotel.eu</h4>
         <h4>P.iva 01558810980</h4>
@@ -26,6 +26,14 @@ const Footer = () => {
         <a href="#">Cookies</a>
         <a href="#">Legal</a>
         <a href="#">Privacy and Policy</a>
+      </div>
+      <div className="btn-get-directions">
+        <a
+          href="https://www.google.com/maps/dir//hotel%20vittoria,%20toscolano%20maderno,%2025088,%20italy"
+          target="_blank"
+        >
+          Get directions
+        </a>
       </div>
       <div className="copyright">
         <h5>© COPYRIGHT HOTEL VITTORIA {currentYear} - ALL RIGHTS RESERVED.</h5>

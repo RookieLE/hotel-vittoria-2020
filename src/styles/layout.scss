@@ -86,10 +86,11 @@ button {
 
   .nav-links {
     z-index: 999;
-    position: relative;
+    position: absolute;
     padding: 2rem;
     background-color: white;
     height: 350px;
+    width: 100%;
     margin: 0;
     display: grid;
 
@@ -120,11 +121,15 @@ button {
 
     .close-btn {
       position: absolute;
-      right: 10px;
-      top: 10px;
-      background-color: #ceffbd;
-      padding: 8px 12px;
-      border-radius: 50%;
+      right: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background-color: $deep-blue;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
 
       img {
         width: 15px;
@@ -176,6 +181,34 @@ footer {
 
     h4 {
       padding-bottom: 2rem;
+    }
+  }
+
+  .links {
+    display: flex-inline;
+    justify-content: space-between;
+    padding: 30px 0; 
+    a {
+      margin: 0 10px;
+      color: white;
+    }
+  }
+
+  .btn-get-directions {
+    margin: 0 auto;
+
+    a {
+      color: #2d4664;
+      font-weight: 500;
+      background: #ceffbd;
+      height: 50px;
+      max-width: 370px;
+      min-width: 300px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: capitalize;
+      border: none;
     }
   }
 
@@ -442,11 +475,15 @@ footer {
 
     .close-btn {
       position: absolute;
-      right: 10px;
-      top: 10px;
-      background-color: #edf1f5;
-      padding: 8px 12px;
-      border-radius: 50%;
+      right: 0;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: $deep-blue;
 
       img {
         width: 15px;

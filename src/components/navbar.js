@@ -30,7 +30,7 @@ const Navbar = contactPagePath => {
         {toggleNav ? (
           <ul className="nav-links">
             <li className="close-btn" onClick={() => setToggleNav(!toggleNav)}>
-              <img src={CloseIcon} alt="close icon" />
+              {/* <img src={CloseIcon} alt="close icon" /> */}X
             </li>
             <Link to="/">
               <li>Home</li>

@@ -1,6 +1,5 @@
 @import './variables.scss';
 
-
 .socials {
   width: 100%;
   padding: 4rem 2rem;
@@ -43,11 +42,10 @@
       padding: 1rem;
       margin: 1rem 0;
       font-size: 1rem;
-      border-radius: 5px;
       outline: none;
 
       &::placeholder {
-        color: $medium-blue;
+        color: #2c466494;
       }
     }
 
@@ -56,14 +54,13 @@
       width: 100%;
       background-color: $light-blue;
       border: none;
-      border-radius: 5px;
       padding: 1rem;
       font-size: 1rem;
       color: $medium-blue;
       outline: none;
 
       &::placeholder {
-        color: $medium-blue;
+        color: #2c466494;
       }
     }
 

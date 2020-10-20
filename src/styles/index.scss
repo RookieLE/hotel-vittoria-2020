@@ -20,15 +20,16 @@
     top: 16%;
 
     h1 {
-      font-weight: 600;
-      font-size: 3rem;
+      font-weight: 400;
+      font-size: 4rem;
       letter-spacing: 2px;
       line-height: 4rem;
+      text-transform: capitalize;
     }
 
     h2 {
       font-weight: 400;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       letter-spacing: 1px;
       line-height: 2.4rem;
     }
@@ -43,7 +44,7 @@
       width: 100%;
 
       a {
-        text-transform: uppercase;
+        text-transform: capitalize;
         letter-spacing: 1px;
         cursor: pointer;
         color: $deep-blue;

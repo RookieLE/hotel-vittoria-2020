@@ -156,9 +156,11 @@ const RoomFinder = ({
             </button>
           </div>
         </div>
-        <button className="find-room-btn" type="submit">
-          {isLoading ? <Loading /> : "Search"}
-        </button>
+        <div className="find-room-container">
+          <button className="find-room-btn" type="submit">
+            {isLoading ? <Loading /> : "Search"}
+          </button>
+        </div>
       </form>
     </>
   )

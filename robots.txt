@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://vittoriahotel.eu/easaaa.github.io/hotel-vittoria-2020/sitemap-index.xml
+Host: https://vittoriahotel.eu
